@@ -11,66 +11,45 @@ struct ContactList: View {
     
     @State var wordNavigationtappedIndex: Int = 0
     
-    var isAddressBook: Bool = true
+    var isAddressBook: Bool
+    
+//    @State private var contacts: [Contact] = Contact.all
+    
+    @EnvironmentObject var model: ContactModel
+    
+//    var contactDict = [String: Array<Contact>]()
+    
+    init(isAddressBook: Bool = true){
+        self.isAddressBook = isAddressBook
+//        contacts.forEach{ (contact) in
+//            if(!contactDict.keys.contains(contact.firstLetter)){
+//                contactDict.updateValue([contact], forKey: contact.firstLetter)
+//            }else{
+//                contactDict[contact.firstLetter]!.append(contact)
+//            }
+//        }
+    }
     
     var body: some View {
-        
         ZStack{
-            
             ScrollView{
-                
                 ScrollViewReader{value in
-                    
                     LazyVStack(pinnedViews: [.sectionHeaders,.sectionFooters]){
-                        
                         if(isAddressBook){
                             SearchBoxVIew()
                             ContactFunctionGroup()
                         }
-                        
-                        Section(header: ContactSectionHeader(title: "A")){
-                            ContactSection(isAddressBook: isAddressBook)
-                            ContactSection(isAddressBook: isAddressBook)
-                        }.id(0)
-                        Section(header: ContactSectionHeader(title: "B")){
-                            ContactSection(isAddressBook: isAddressBook)
-                            ContactSection(isAddressBook: isAddressBook)
-                            ContactSection(isAddressBook: isAddressBook)
-                        }.id(1)
-                        Section(header: ContactSectionHeader(title: "C")){
-                            ContactSection()
-                            ContactSection()
-                            ContactSection()
-                            ContactSection()
-                        }.id(2)
-                        Section(header: ContactSectionHeader(title: "D")){
-                            ContactSection()
-                            ContactSection()
-                            ContactSection()
-                            ContactSection()
-                            ContactSection()
-                        }.id(3)
-                        Section(header: ContactSectionHeader(title: "E")){
-                            ContactSection()
-                            ContactSection()
-                        }.id(4)
-                        Section(header: ContactSectionHeader(title: "F")){
-                            ContactSection()
-                            ContactSection()
-                        }.id(5)
-                        Section(header: ContactSectionHeader(title: "G")){
-                            ContactSection()
-                            ContactSection()
-                        }.id(6)
-                        
-                    }.onChange(of: wordNavigationtappedIndex, perform: { index in
-                        value.scrollTo(index)
-                    })
+                        ForEach(model.contactModel.keys.sorted(), id: \.self) {key in
+                            Section(header: ContactSectionHeader(title: key)){
+                                ForEach(model.contactModel[key]!){ item in
+                                    ContactSection(isAddressBook: isAddressBook, contact: item)
+                                }
+                            }
+                        }
+                    }
                 }
             }
-            
 //            WordNavigation(wordNavigationtappedIndex: $wordNavigationtappedIndex)
-            
         }
     }
 }

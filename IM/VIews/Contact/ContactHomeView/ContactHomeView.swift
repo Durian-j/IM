@@ -11,8 +11,7 @@ struct ContactHomeView: View {
     
     var body: some View {
         VStack{
-            
-            ContactList()
+            ContactList().environmentObject(ContactModel())
         }
     }
 }

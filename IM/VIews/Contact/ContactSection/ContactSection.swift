@@ -9,9 +9,17 @@ import SwiftUI
 
 struct ContactSection: View {
     
+    var isAddressBook: Bool = true
+    
+    var contact: Contact
+    
     @State var isSelect: Bool = false
     
-    var isAddressBook: Bool = true
+    @EnvironmentObject var model: ContactModel
+    
+    var index: Int {
+        model.contactList.firstIndex(where: { $0.id == contact.id })!
+    }
     
     var body: some View {
         if(isAddressBook){
@@ -20,7 +28,7 @@ struct ContactSection: View {
                 label: {
                     VStack{
                         HStack{
-                            ContactSectionInfo()
+                            ContactSectionInfo(contact: contact)
                             Spacer()
                         }
                         .padding(.leading, 20)
@@ -30,10 +38,10 @@ struct ContactSection: View {
         }else{
             VStack{
                 Button(action: {
-                    isSelect.toggle()
+                    model.contactList[index].select.toggle()
                 }) {
                     HStack{
-                        if(isSelect){
+                        if(model.contactList[index].select){
                             Text(IconFont.selected.rawValue)
                                 .font(.custom("iconfont", size: 20))
                                 .padding(.trailing, 3)
@@ -44,7 +52,7 @@ struct ContactSection: View {
                                 .overlay(Circle().stroke(Color.gray))
                                 .padding(.trailing, 5)
                         }
-                        ContactSectionInfo()
+                        ContactSectionInfo(contact: contact)
                         Spacer()
                     }
                 }
@@ -56,17 +64,18 @@ struct ContactSection: View {
 }
 
 struct ContactSectionInfo: View {
+    var contact: Contact
     var body: some View {
-        Image("a2").resizable().scaledToFill().frame(width: 45, height: 45).clipShape(Circle())
+        Image(contact.avatar).resizable().scaledToFill().frame(width: 45, height: 45).clipShape(Circle())
         VStack(alignment: .leading, spacing: 3){
-            Text("柴").foregroundColor(Color(hex: 0x333333))
-            Text("15365365365").font(.system(size: 14)).foregroundColor(.gray)
+            Text(contact.name).foregroundColor(Color(hex: 0x333333))
+            Text(contact.account).font(.system(size: 14)).foregroundColor(.gray)
         }
     }
 }
 
 struct ContactSection_Previews: PreviewProvider {
     static var previews: some View {
-        ContactSection()
+        ContactSection(contact: Contact(id: 1, name: "李白", avatar: "a1", account: "123", firstLetter: "L", select: false))
     }
 }

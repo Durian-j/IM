@@ -17,6 +17,8 @@ struct GroupChat: View {
     
     @Binding var showContextMenu: Bool
     
+    @State var contacListModel: ContactModel = ContactModel()
+    
     var body: some View {
         VStack{
             HStack{
@@ -27,6 +29,7 @@ struct GroupChat: View {
                     Text("取消")
                         .font(.system(size: 16))
                         .frame(width: 60)
+                        .foregroundColor(.gray)
                 })
                 Spacer()
                 Text("选择联系人")
@@ -47,7 +50,31 @@ struct GroupChat: View {
                 }.padding()
             }
             
-            ContactList(isAddressBook: false)
+            ContactList(isAddressBook: false).environmentObject(contacListModel)
+            
+            HStack{
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack{
+                        ForEach(contacListModel.contactList){ contact in
+                            if(contact.select == true){
+                                Image(contact.avatar).resizable().scaledToFill().frame(width: 40, height: 40).clipShape(Circle())
+                            }
+                        }
+                    }
+                }
+                Spacer()
+                Button(action: {
+                    print(contacListModel.contactList)
+                }, label: {
+                    Text("确定").font(.system(size: 15))
+                })
+                .foregroundColor(Color.white)
+                .padding(EdgeInsets(top: 5, leading: 10, bottom: 5, trailing: 10))
+                .background(Color.blue)
+            }
+            .padding(.horizontal)
+            .frame(height: 50)
+            .background(Color(hex: 0xF4F5F9))
         }
     }
 }
