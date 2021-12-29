@@ -39,6 +39,11 @@ struct ContactSection: View {
             VStack{
                 Button(action: {
                     model.contactList[index].select.toggle()
+                    if( model.contactList[index].select){
+                        model.selectedList.append(model.contactList[index])
+                    }else{
+                        model.selectedList.removeAll(where: { $0.id == model.contactList[index].id})
+                    }
                 }) {
                     HStack{
                         if(model.contactList[index].select){

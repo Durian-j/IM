@@ -9,31 +9,32 @@ import SwiftUI
 
 struct BottomSelectionBar: View {
     
+    let safeAreaInsets = UIApplication.shared.windows.first?.safeAreaInsets
+    
     @EnvironmentObject var model: ContactModel
     
     var body: some View {
         HStack{
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack{
-                    ForEach(model.contactList){ contact in
-                        if(contact.select == true){
-                            Image(contact.avatar).resizable().scaledToFill().frame(width: 40, height: 40).clipShape(Circle())
-                        }
+                    ForEach(model.selectedList){ selectedContact in
+                        Image(selectedContact.avatar).resizable().scaledToFill().frame(width: 35, height: 35).clipShape(Circle())
                     }
                 }
             }
             Spacer()
             Button(action: {
-                print(model.contactList)
+                print(model.selectedList)
             }, label: {
-                Text("确定").font(.system(size: 15))
+                Text("确定").font(.system(size: 14))
             })
             .foregroundColor(Color.white)
             .padding(EdgeInsets(top: 5, leading: 10, bottom: 5, trailing: 10))
             .background(Color.blue)
+            .cornerRadius(5)
         }
         .padding(.horizontal)
-        .frame(height: 50)
+        .frame(height: (safeAreaInsets?.bottom ?? 0) + 50)
         .background(Color(hex: 0xF4F5F9))
     }
 }

@@ -30,6 +30,7 @@ struct ContextMenuView: View {
             .frame(height: 40)
             .fullScreenCover(isPresented: $groupFullPagePresented, content: {
                 GroupChat(groupFullPagePresented: $groupFullPagePresented,showContextMenu: $showContextMenu)
+                    .ignoresSafeArea(.container, edges: .bottom)
             })
             
             Rectangle()

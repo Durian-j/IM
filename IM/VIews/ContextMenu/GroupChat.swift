@@ -36,7 +36,7 @@ struct GroupChat: View {
                 Spacer()
                 Text("")
                     .frame(width: 60)
-            }
+            }.padding(.top, 15)
             
             ZStack{
                 Rectangle().fill().frame(height: 30).foregroundColor(Color(hex: 0xF5F5F5)).cornerRadius(5).padding(12.5)

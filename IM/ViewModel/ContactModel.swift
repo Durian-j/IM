@@ -10,6 +10,7 @@ import Foundation
 class ContactModel: ObservableObject {
     @Published var contactList: [Contact] = Contact.all
     @Published var contactModel: [String: Array<Contact>] = handleData()
+    @Published var selectedList: [Contact] = []
 }
 
 func handleData() ->  [String: Array<Contact>]{
