@@ -11,6 +11,8 @@ struct MeHome: View {
     
     let screenWidth = UIScreen.main.bounds.width
     
+    let safeAreaInsets = UIApplication.shared.windows.first?.safeAreaInsets
+    
     var body: some View {
         
         ZStack{
@@ -24,7 +26,7 @@ struct MeHome: View {
                     label: {
                         HStack{
                             VStack(alignment: .leading){
-                                Text("张三")
+                                Text("天水麒麟儿")
                                     .font(.system(size: 24))
                                     .padding(.bottom, 2)
                                 
@@ -36,15 +38,39 @@ struct MeHome: View {
                             Image(systemName: "chevron.right")
                         }
                         .padding()
-                        .frame(width: screenWidth, height: 160)
+                        .padding(.top, safeAreaInsets?.top)
+                        .foregroundColor(Color(hex: 0x333333))
+                        .frame(width: screenWidth, height: 170)
                         .background(Color.white)
                         
                     })
                 
                 VStack(spacing: 0){
-                    GeneralRow(title: "账号与安全",width: screenWidth, trailing: Image(systemName: "chevron.right"))
-                    GeneralRow(title: "通知",width: screenWidth, trailing: Image(systemName: "chevron.right"))
-                    GeneralRow(title: "设置",width: screenWidth,trailing: Image(systemName: "chevron.right"))
+                    GeneralRow(title: "账号与安全",width: screenWidth
+                               ,leading: AnyView(Text(IconFont.accountSecurity.rawValue)
+                                                    .foregroundColor(Color(hex: 0x333333))
+                                                    .font(.custom("iconfont", size: 18))),
+                               trailing: Image(systemName: "chevron.right"))
+                    GeneralRow(title: "消息通知",width: screenWidth
+                               ,leading: AnyView(Text(IconFont.notification.rawValue)
+                                                    .foregroundColor(Color(hex: 0x333333))
+                                                    .font(.custom("iconfont", size: 18))),
+                               trailing: Image(systemName: "chevron.right"))
+                    GeneralRow(title: "隐私设置",width: screenWidth
+                               ,leading: AnyView(Text(IconFont.privacy.rawValue)
+                                                    .foregroundColor(Color(hex: 0x333333))
+                                                    .font(.custom("iconfont", size: 18))),
+                               trailing: Image(systemName: "chevron.right"))
+                    GeneralRow(title: "通用",width: screenWidth
+                               ,leading: AnyView(Text(IconFont.general.rawValue)
+                                                    .foregroundColor(Color(hex: 0x333333))
+                                                    .font(.custom("iconfont", size: 18))),
+                               trailing: Image(systemName: "chevron.right"))
+                    GeneralRow(title: "关于",width: screenWidth
+                               ,leading: AnyView(Text(IconFont.about.rawValue)
+                                                    .foregroundColor(Color(hex: 0x333333))
+                                                    .font(.custom("iconfont", size: 18))),
+                               trailing: Image(systemName: "chevron.right"))
                 }
                 
                 Spacer()

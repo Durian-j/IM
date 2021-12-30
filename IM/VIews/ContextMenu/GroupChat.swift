@@ -29,7 +29,7 @@ struct GroupChat: View {
                     Text("取消")
                         .font(.system(size: 16))
                         .frame(width: 60)
-                        .foregroundColor(.gray)
+                        .foregroundColor(.black)
                 })
                 Spacer()
                 Text("选择联系人")

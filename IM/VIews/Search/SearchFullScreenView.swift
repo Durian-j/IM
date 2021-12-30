@@ -25,7 +25,9 @@ struct SearchFullScreenView: View {
                             .padding(.leading, 5)
                         TextField("搜索", text: $searchText)
                             .font(.system(size: 16))
-                    }.padding()
+                    }
+                    .foregroundColor(Color.gray)
+                    .padding()
                 }
                 
                 Button(action: {

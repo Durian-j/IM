@@ -26,7 +26,7 @@ struct BottomSelectionBar: View {
             Button(action: {
                 print(model.selectedList)
             }, label: {
-                Text("确定").font(.system(size: 14))
+                Text("确定\(model.selectedList.count > 0 ? "·" + String(model.selectedList.count) : "" )").font(.system(size: 14))
             })
             .foregroundColor(Color.white)
             .padding(EdgeInsets(top: 5, leading: 10, bottom: 5, trailing: 10))

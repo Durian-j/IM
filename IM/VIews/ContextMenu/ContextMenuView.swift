@@ -13,6 +13,8 @@ struct ContextMenuView: View {
     
     @Binding var showContextMenu: Bool
     
+    @Binding var addFriendsFlag: Bool
+    
     var body: some View {
         
         VStack (spacing: 0) {
@@ -39,7 +41,8 @@ struct ContextMenuView: View {
                 .opacity(0.3)
             
             Button(action: {
-                
+                addFriendsFlag = true
+                showContextMenu = false
             }) {
                 HStack {
                     Image(systemName: "person.fill.badge.plus")
@@ -57,6 +60,6 @@ struct ContextMenuView: View {
 
 struct ContextMenuView_Previews: PreviewProvider {
     static var previews: some View {
-        ContextMenuView(showContextMenu: .constant(false))
+        ContextMenuView(showContextMenu: .constant(false), addFriendsFlag: .constant(false))
     }
 }

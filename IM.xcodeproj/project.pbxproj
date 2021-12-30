@@ -49,6 +49,7 @@
 		6AC342D5274DEC22000302D8 /* RoundedCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC342D4274DEC22000302D8 /* RoundedCorners.swift */; };
 		6AC342D9274E2752000302D8 /* LoginForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC342D8274E2752000302D8 /* LoginForm.swift */; };
 		6AC342DB274E3719000302D8 /* RegisterForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC342DA274E3718000302D8 /* RegisterForm.swift */; };
+		84F386D1277DF22E009FB1D4 /* AddFriendsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F386D0277DF22E009FB1D4 /* AddFriendsPage.swift */; };
 		C6569AB5BBE31AD7D20F0663 /* Pods_IM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DE3BEC223AB4C36A8A6F96A /* Pods_IM.framework */; };
 /* End PBXBuildFile section */
 
@@ -100,6 +101,7 @@
 		6AC342D4274DEC22000302D8 /* RoundedCorners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorners.swift; sourceTree = "<group>"; };
 		6AC342D8274E2752000302D8 /* LoginForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginForm.swift; sourceTree = "<group>"; };
 		6AC342DA274E3718000302D8 /* RegisterForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterForm.swift; sourceTree = "<group>"; };
+		84F386D0277DF22E009FB1D4 /* AddFriendsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendsPage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -265,6 +267,7 @@
 				6A42140E2750AD6D00B38559 /* ContextMenuView.swift */,
 				6A6BF0D52775B2EC00614623 /* GroupChat.swift */,
 				6A730305277C64E400BC9F61 /* BottomSelectionBar.swift */,
+				84F386D0277DF22E009FB1D4 /* AddFriendsPage.swift */,
 			);
 			path = ContextMenu;
 			sourceTree = "<group>";
@@ -489,6 +492,7 @@
 				6A146FD42754BC2600EDD59F /* Message.swift in Sources */,
 				6A04B262274CD5B500BE24F9 /* LoginPage.swift in Sources */,
 				6A146FD62754C13700EDD59F /* HexColor.swift in Sources */,
+				84F386D1277DF22E009FB1D4 /* AddFriendsPage.swift in Sources */,
 				6A7B7CEA27562BF700699C81 /* ContactSectionHeader.swift in Sources */,
 				6A4214162750CA7800B38559 /* Chat.swift in Sources */,
 				6A730306277C64E400BC9F61 /* BottomSelectionBar.swift in Sources */,

@@ -13,14 +13,14 @@ struct GeneralRow: View {
     var showDivider: Bool = true
     var color: Color = Color(hex: 0x333333)
     var width: CGFloat = screenWidth - 30
-    var leading: Image = Image("")
+    var leading: AnyView = AnyView(EmptyView())
     var trailing: Image = Image("")
     
     var body: some View {
         VStack(alignment: .leading, spacing: 0){
             
             HStack{
-                leading
+                leading.padding(.trailing, 5)
                 Text(title)
                     .font(.system(size: 16))
                     .foregroundColor(color)
@@ -44,7 +44,7 @@ struct GeneralRow_Previews: PreviewProvider {
     static var previews: some View {
         ZStack{
             Color(hex: 0xF4F5F9).edgesIgnoringSafeArea(.all)
-            GeneralRow(title: "我的收藏", showDivider: true, leading: Image(systemName: "person"), trailing: Image(systemName: "chevron.right")
+            GeneralRow(title: "我的收藏", showDivider: true, leading: AnyView(Image(systemName: "person")), trailing: Image(systemName: "chevron.right")
             )
         }
     }

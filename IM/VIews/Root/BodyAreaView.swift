@@ -15,6 +15,8 @@ struct BodyAreaView: View {
     
     @Binding var showContextMenu: Bool
     
+    @Binding var addFriendsFlag: Bool
+    
     var body: some View {
         
         NavigationView{
@@ -71,7 +73,7 @@ struct BodyAreaView: View {
                     }))
         case .contact:
             return AnyView(Button(action: {
-                showContextMenu.toggle()
+                addFriendsFlag = true
                     }, label: {
                         Image(systemName: "person.badge.plus")
                             .renderingMode(.template)
@@ -134,6 +136,6 @@ struct BodyAreaView: View {
 
 struct BodyAreaView_Previews: PreviewProvider {
     static var previews: some View {
-        BodyAreaView(showContextMenu: .constant(false))
+        BodyAreaView(showContextMenu: .constant(false), addFriendsFlag: .constant(false))
     }
 }
