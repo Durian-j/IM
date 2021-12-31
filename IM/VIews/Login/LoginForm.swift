@@ -18,7 +18,7 @@ struct LoginForm: View {
     @State private var vertifyCode: String = ""
     
     @State private var showVertifyCode: Bool = false
-    
+    @Binding var isAuth: Bool
     
     var body: some View {
         VStack(spacing: 10){
@@ -46,7 +46,7 @@ struct LoginForm: View {
                             showPwd.toggle()
                         }){
                             Image(systemName: showPwd ? "eye": "eye.slash")
-                                .foregroundColor(Color(hex: 0x2E59E6))
+                                .foregroundColor(IMColor.themeColor)
                         }
                     }
                 }else{
@@ -80,19 +80,20 @@ struct LoginForm: View {
             
             Button(action: {
                 print("账号是：\(userName)，密码是：\(password)，验证码是：\(vertifyCode)")
+                isAuth = true
             }) {
                 Text("登录")
             }
             .foregroundColor(.white)
             .frame(width: 260, height: 42, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-            .background(RoundedCorners(color: Color(hex: 0x2E59E6), tl: 20, tr: 0, bl: 0, br: 20))
+            .background(RoundedCorners(color: IMColor.themeColor, tl: 20, tr: 0, bl: 0, br: 20))
             
             Button(action: {
                 showVertifyCode.toggle()
             }) {
                 Text(showVertifyCode ? "密码登录": "验证码登录")
                     .font(.system(size: 15))
-                    .foregroundColor(Color(hex: 0x2E59E6))
+                    .foregroundColor(IMColor.themeColor)
             }
             .padding(.top, 10)
                 
@@ -112,6 +113,6 @@ struct LoginForm: View {
 
 struct LoginForm_Previews: PreviewProvider {
     static var previews: some View {
-        LoginForm()
+        LoginForm(isAuth: .constant(false))
     }
 }

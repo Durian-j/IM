@@ -8,9 +8,15 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State var isAuth: Bool = false
+    
     var body: some View {
-//        LoginPage().ignoresSafeArea(edges: .top)
-        RootView()
+        if(isAuth){
+            RootView()
+        }else{
+            LoginPage(isAuth: $isAuth).ignoresSafeArea(edges: .top)
+        }
     }
 }
 

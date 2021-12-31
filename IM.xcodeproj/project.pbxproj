@@ -146,10 +146,9 @@
 		6A04B24E274CD4C300BE24F9 /* IM */ = {
 			isa = PBXGroup;
 			children = (
+				6AD76179277EA7260076CED7 /* Assets */,
 				6A730302277C341200BC9F61 /* ViewModel */,
-				6A113FEC277B07CA00AD929B /* Iconfont */,
 				6A78F1A9274F1E5B006380CC /* Components */,
-				6A04B263274CEB3A00BE24F9 /* Common */,
 				6A04B25F274CD58000BE24F9 /* VIews */,
 				6A04B25E274CD55000BE24F9 /* Model */,
 				6A04B24F274CD4C300BE24F9 /* IMApp.swift */,
@@ -202,16 +201,6 @@
 				6AC342DA274E3718000302D8 /* RegisterForm.swift */,
 			);
 			path = Login;
-			sourceTree = "<group>";
-		};
-		6A04B263274CEB3A00BE24F9 /* Common */ = {
-			isa = PBXGroup;
-			children = (
-				6AC342D4274DEC22000302D8 /* RoundedCorners.swift */,
-				6A146FD52754C13700EDD59F /* HexColor.swift */,
-				6A113FEA277B06BE00AD929B /* IconFont.swift */,
-			);
-			path = Common;
 			sourceTree = "<group>";
 		};
 		6A113FEC277B07CA00AD929B /* Iconfont */ = {
@@ -312,6 +301,7 @@
 		6A78F1A9274F1E5B006380CC /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				6AC342D4274DEC22000302D8 /* RoundedCorners.swift */,
 				6A78F1AA274F1E9B006380CC /* CountDownButton.swift */,
 				6A4AFC2C27745BB900798677 /* GeneralRow.swift */,
 			);
@@ -336,6 +326,24 @@
 				6A6BF0D72775C2A300614623 /* ContactHomeView */,
 			);
 			path = Contact;
+			sourceTree = "<group>";
+		};
+		6AD76179277EA7260076CED7 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				6AD7617A277EA77A0076CED7 /* Const */,
+				6A113FEC277B07CA00AD929B /* Iconfont */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		6AD7617A277EA77A0076CED7 /* Const */ = {
+			isa = PBXGroup;
+			children = (
+				6A146FD52754C13700EDD59F /* HexColor.swift */,
+				6A113FEA277B06BE00AD929B /* IconFont.swift */,
+			);
+			path = Const;
 			sourceTree = "<group>";
 		};
 		9ACEBC9EBAA68E61E60DC88A /* Frameworks */ = {

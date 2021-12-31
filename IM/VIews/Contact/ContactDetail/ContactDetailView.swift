@@ -36,7 +36,7 @@ struct ContactDetailView: View {
         var body: some View {
             
             ZStack(alignment: .bottom) {
-                Rectangle().fill(Color.gray)
+                Rectangle().fill(IMColor.darkGray)
                 
                 HStack {
                     

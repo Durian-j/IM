@@ -15,6 +15,8 @@ struct LoginPage: View {
     
     @State private var showLogin: Bool = true
     
+    @Binding var isAuth: Bool
+    
     var body: some View {
         VStack{
             ZStack{
@@ -33,7 +35,7 @@ struct LoginPage: View {
                     }
                     
                     Rectangle()
-                        .fill(Color(hex: 0x2E59E6))
+                        .fill(IMColor.themeColor)
                         .frame(width: 30, height: 20)
                     
                     Button(action: {
@@ -47,7 +49,7 @@ struct LoginPage: View {
                 .padding(.top, 50)
                 
                 if(showLogin){
-                    LoginForm()
+                    LoginForm(isAuth: $isAuth)
                 }else{
                     RegisterForm()
                 }
@@ -55,7 +57,7 @@ struct LoginPage: View {
             }
             .frame(width: screenWidth, height: 250, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
             .padding(.top,safeAreaInsets?.top ?? 0 + 8.0)
-            .background(Color(hex: 0x2E59E6))
+            .background(IMColor.themeColor)
             
             Spacer()
         }
@@ -64,6 +66,6 @@ struct LoginPage: View {
 
 struct LoginPage_Previews: PreviewProvider {
     static var previews: some View {
-        LoginPage().ignoresSafeArea()
+        LoginPage(isAuth: .constant(false)).ignoresSafeArea()
     }
 }

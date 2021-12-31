@@ -20,7 +20,7 @@ struct ChatView: View {
                 ChatAvatar(avatarList: chat.avatarList, personNum: chat.avatarNum)
                 
                 VStack(alignment: .leading, spacing: 3){
-                    Text(chat.name).font(.system(size: 17)).foregroundColor(Color(hex: 0x333333))
+                    Text(chat.name).font(.system(size: 17)).foregroundColor(IMColor.textColor)
                     Text(chat.messageDes).foregroundColor(.gray).font(.system(size: 14))
                 }
                 .padding(.leading,5)

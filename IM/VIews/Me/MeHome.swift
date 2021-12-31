@@ -26,7 +26,7 @@ struct MeHome: View {
                     label: {
                         HStack{
                             VStack(alignment: .leading){
-                                Text("天水麒麟儿")
+                                Text("慕容垂")
                                     .font(.system(size: 24))
                                     .padding(.bottom, 2)
                                 
@@ -34,12 +34,12 @@ struct MeHome: View {
                                     .font(.system(size: 16))
                             }
                             Spacer()
-                            Image("a3").resizable().scaledToFill().frame(width: 80, height: 80).clipShape(Circle())
+                            Image("avatar1").resizable().scaledToFill().frame(width: 80, height: 80).clipShape(Circle())
                             Image(systemName: "chevron.right")
                         }
                         .padding()
                         .padding(.top, safeAreaInsets?.top)
-                        .foregroundColor(Color(hex: 0x333333))
+                        .foregroundColor(IMColor.textColor)
                         .frame(width: screenWidth, height: 170)
                         .background(Color.white)
                         
@@ -48,27 +48,27 @@ struct MeHome: View {
                 VStack(spacing: 0){
                     GeneralRow(title: "账号与安全",width: screenWidth
                                ,leading: AnyView(Text(IconFont.accountSecurity.rawValue)
-                                                    .foregroundColor(Color(hex: 0x333333))
+                                                    .foregroundColor(Color(hex: 0x46a6fa))
                                                     .font(.custom("iconfont", size: 18))),
                                trailing: Image(systemName: "chevron.right"))
                     GeneralRow(title: "消息通知",width: screenWidth
                                ,leading: AnyView(Text(IconFont.notification.rawValue)
-                                                    .foregroundColor(Color(hex: 0x333333))
+                                                    .foregroundColor(Color(hex: 0x2bd9a4))
                                                     .font(.custom("iconfont", size: 18))),
                                trailing: Image(systemName: "chevron.right"))
                     GeneralRow(title: "隐私设置",width: screenWidth
                                ,leading: AnyView(Text(IconFont.privacy.rawValue)
-                                                    .foregroundColor(Color(hex: 0x333333))
+                                                    .foregroundColor(Color(hex: 0xfdcb76))
                                                     .font(.custom("iconfont", size: 18))),
                                trailing: Image(systemName: "chevron.right"))
                     GeneralRow(title: "通用",width: screenWidth
                                ,leading: AnyView(Text(IconFont.general.rawValue)
-                                                    .foregroundColor(Color(hex: 0x333333))
+                                                    .foregroundColor(Color(hex: 0x19cec9))
                                                     .font(.custom("iconfont", size: 18))),
                                trailing: Image(systemName: "chevron.right"))
                     GeneralRow(title: "关于",width: screenWidth
                                ,leading: AnyView(Text(IconFont.about.rawValue)
-                                                    .foregroundColor(Color(hex: 0x333333))
+                                                    .foregroundColor(Color(hex: 0x98a9ff))
                                                     .font(.custom("iconfont", size: 18))),
                                trailing: Image(systemName: "chevron.right"))
                 }

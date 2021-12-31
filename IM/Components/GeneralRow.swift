@@ -11,7 +11,7 @@ struct GeneralRow: View {
     
     var title: String
     var showDivider: Bool = true
-    var color: Color = Color(hex: 0x333333)
+    var color: Color = IMColor.textColor
     var width: CGFloat = screenWidth - 30
     var leading: AnyView = AnyView(EmptyView())
     var trailing: Image = Image("")
@@ -20,7 +20,7 @@ struct GeneralRow: View {
         VStack(alignment: .leading, spacing: 0){
             
             HStack{
-                leading.padding(.trailing, 5)
+                leading.padding(.horizontal, 5)
                 Text(title)
                     .font(.system(size: 16))
                     .foregroundColor(color)
@@ -29,7 +29,7 @@ struct GeneralRow: View {
                     .font(.system(size: 14))
             }
             .padding(.init(top: 0, leading: 10, bottom: 0, trailing: 10))
-            .frame(width: width, height: 40,alignment: .leading)
+            .frame(width: width, height: 46,alignment: .leading)
             
             if showDivider {
                 Divider()
