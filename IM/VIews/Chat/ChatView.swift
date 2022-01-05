@@ -2,50 +2,33 @@
 //  ChatView.swift
 //  IM
 //
-//  Created by sfere on 2021/11/26.
+//  Created by sfere on 2021/11/29.
 //
 
 import SwiftUI
 
 struct ChatView: View {
     
-    var chat: Chat
+    var title: String
     
     var body: some View {
         
-        VStack(spacing: 7){
+        GeometryReader { proxy in
             
-            HStack{
+            VStack (spacing: 0) {
+                ChatList()
                 
-                ChatAvatar(avatarList: chat.avatarList, personNum: chat.avatarNum)
-                
-                VStack(alignment: .leading, spacing: 3){
-                    Text(chat.name).font(.system(size: 17)).foregroundColor(IMColor.textColor)
-                    Text(chat.messageDes).foregroundColor(.gray).font(.system(size: 14))
-                }
-                .padding(.leading,5)
-                Spacer()
-                VStack(alignment: .trailing, spacing: 3){
-                    Text(chat.time).font(.system(size: 13)).foregroundColor(.gray)
-                    ZStack{
-                          Circle()
-                          .frame(width: 20, height: 20)
-                          .foregroundColor(Color(hex: 0xFC4525))
-                        Text(chat.messageCount)
-                            .foregroundColor(.white)
-                            .font(.system(size: 13))
-                      }
-                }
+                SendBox(proxy: proxy)
             }
-            .padding([.leading,.trailing], 10)
-            
-            Divider()
+            .edgesIgnoringSafeArea(.bottom)
+            .navigationBarTitle(title, displayMode: .inline)
+            .navigationBarItems(trailing: NavigationLink(destination: Text("123"), label: { Text(IconFont.about.rawValue).foregroundColor(Color(hex: 0x98a9ff)).font(.custom("iconfont", size: 18)) }))
         }
     }
 }
 
 struct ChatView_Previews: PreviewProvider {
     static var previews: some View {
-        ChatView(chat: Chat(id: 1, name: "张三", avatarList: ["avatar1"], avatarNum: 1, messageDes: "回看射雕处，千里暮云平", time: "11:35", messageCount: "5"))
+        ChatView(title: "tom")
     }
 }

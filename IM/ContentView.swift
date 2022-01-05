@@ -12,11 +12,12 @@ struct ContentView: View {
     @State var isAuth: Bool = false
     
     var body: some View {
-        if(isAuth){
-            RootView()
-        }else{
-            LoginPage(isAuth: $isAuth).ignoresSafeArea(edges: .top)
-        }
+//        if(isAuth){
+//            RootView()
+//        }else{
+//            LoginPage(isAuth: $isAuth).ignoresSafeArea(edges: .top)
+//        }
+        RootView()
     }
 }
 

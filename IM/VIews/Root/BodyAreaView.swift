@@ -23,7 +23,7 @@ struct BodyAreaView: View {
             
             TabView(selection: $selection){
                 
-                ChatListView()
+                MessageListView()
                     .tabItem {
                         Item(type: .chat, selection: selection)
                     }

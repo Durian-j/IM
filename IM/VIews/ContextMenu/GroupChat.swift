@@ -52,7 +52,7 @@ struct GroupChat: View {
             
             ContactList(isAddressBook: false).environmentObject(contacListModel)
             
-            BottomSelectionBar().environmentObject(contacListModel)
+            BottomSelectionBar(groupFullPagePresented: $groupFullPagePresented, showContextMenu: $showContextMenu).environmentObject(contacListModel)
         }
     }
 }

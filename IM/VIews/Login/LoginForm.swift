@@ -82,11 +82,13 @@ struct LoginForm: View {
                 print("账号是：\(userName)，密码是：\(password)，验证码是：\(vertifyCode)")
                 isAuth = true
             }) {
-                Text("登录")
+                HStack{
+                    Text("登录")
+                }
+                .foregroundColor(.white)
+                .frame(width: 260, height: 42, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                .background(RoundedCorners(color: IMColor.themeColor, tl: 20, tr: 0, bl: 0, br: 20))
             }
-            .foregroundColor(.white)
-            .frame(width: 260, height: 42, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-            .background(RoundedCorners(color: IMColor.themeColor, tl: 20, tr: 0, bl: 0, br: 20))
             
             Button(action: {
                 showVertifyCode.toggle()

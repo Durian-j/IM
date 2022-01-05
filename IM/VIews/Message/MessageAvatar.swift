@@ -1,5 +1,5 @@
 //
-//  ChatAvatar.swift
+//  MessageAvatar.swift
 //  IM
 //
 //  Created by sfere on 2021/11/29.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ChatAvatar: View {
+struct MessageAvatar: View {
     @State var avatarList = Array<String>()
     
     @State var personNum: Int = 1
@@ -52,8 +52,8 @@ struct ChatAvatar: View {
     }
 }
 
-struct ChatAvatar_Previews: PreviewProvider {
+struct MessageAvatar_Previews: PreviewProvider {
     static var previews: some View {
-        ChatAvatar(avatarList: ["a1","a2","a3","a4"], personNum: 4)
+        MessageAvatar(avatarList: ["a1","a2","a3","a4"], personNum: 4)
     }
 }

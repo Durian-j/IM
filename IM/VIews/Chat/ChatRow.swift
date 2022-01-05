@@ -1,5 +1,5 @@
 //
-//  MessageRow.swift
+//  ChatRow.swift
 //  IM
 //
 //  Created by sfere on 2021/11/29.
@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-struct MessageRow: View {
+struct ChatRow: View {
     
-    let message: Message
+    let message: Chat
     let isMe: Bool
     
     var body: some View {
@@ -75,9 +75,9 @@ struct MessageRow: View {
     }
 }
 
-struct MessageRow_Previews: PreviewProvider {
+struct ChatRow_Previews: PreviewProvider {
     static var previews: some View {
-        MessageRow(message: Message(id: 1, name: "nm", avatar: "a1", text: "十六进制颜色码就是在软件中设定颜色值的代码。在很多软件中，都会遇到设定颜色值的问题。人的眼睛看到的颜色有两种", type: Message.MessageType.text), isMe: true)
+        ChatRow(message: Chat(id: 1, name: "nm", avatar: "a1", text: "十六进制颜色码就是在软件中设定颜色值的代码。在很多软件中，都会遇到设定颜色值的问题。人的眼睛看到的颜色有两种", type: Chat.MessageType.text), isMe: true)
             .previewLayout(.sizeThatFits)
     }
 }
