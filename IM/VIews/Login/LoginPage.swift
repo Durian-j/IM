@@ -9,7 +9,7 @@ import SwiftUI
 
 struct LoginPage: View {
     
-    let screenWidth = UIScreen.main.bounds.width
+//    let screenWidth = UIScreen.main.bounds.width
     
     let safeAreaInsets = UIApplication.shared.windows.first?.safeAreaInsets
     

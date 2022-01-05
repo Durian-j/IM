@@ -9,8 +9,8 @@ import SwiftUI
 
 struct LoginForm: View {
     
-    let screenHeight = UIScreen.main.bounds.height
-    let screenWidth = UIScreen.main.bounds.width
+//    let screenHeight = UIScreen.main.bounds.height
+//    let screenWidth = UIScreen.main.bounds.width
     
     @State private var userName = ""
     @State private var password = ""

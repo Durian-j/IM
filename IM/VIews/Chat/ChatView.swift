@@ -22,7 +22,7 @@ struct ChatView: View {
             }
             .edgesIgnoringSafeArea(.bottom)
             .navigationBarTitle(title, displayMode: .inline)
-            .navigationBarItems(trailing: NavigationLink(destination: Text("123"), label: { Text(IconFont.about.rawValue).foregroundColor(Color(hex: 0x98a9ff)).font(.custom("iconfont", size: 18)) }))
+            .navigationBarItems(trailing: NavigationLink(destination: ChatSettings(), label: { Text(IconFont.about.rawValue).foregroundColor(Color(hex: 0x98a9ff)).font(.custom("iconfont", size: 18)) }))
         }
     }
 }

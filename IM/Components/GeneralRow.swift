@@ -20,7 +20,7 @@ struct GeneralRow: View {
         VStack(alignment: .leading, spacing: 0){
             
             HStack{
-                leading.padding(.horizontal, 5)
+                leading
                 Text(title)
                     .font(.system(size: 16))
                     .foregroundColor(color)
@@ -28,7 +28,7 @@ struct GeneralRow: View {
                 trailing
                     .font(.system(size: 14))
             }
-            .padding(.init(top: 0, leading: 10, bottom: 0, trailing: 10))
+            .padding(.init(top: 0, leading: 15, bottom: 0, trailing: 15))
             .frame(width: width, height: 46,alignment: .leading)
             
             if showDivider {

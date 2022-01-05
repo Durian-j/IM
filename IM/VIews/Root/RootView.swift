@@ -9,7 +9,7 @@ import SwiftUI
 
 struct RootView: View {
     
-    let screenWidth = UIScreen.main.bounds.width
+//    let screenWidth = UIScreen.main.bounds.width
     
     @State var showContextMenu: Bool = false
     

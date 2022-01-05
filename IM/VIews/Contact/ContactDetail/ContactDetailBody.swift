@@ -7,11 +7,11 @@
 
 import SwiftUI
 
-let screenWidth = UIScreen.main.bounds.width
+//let screenWidth = UIScreen.main.bounds.width
 
 struct ContactDetailBody: View {
     
-    let screenHeight = UIScreen.main.bounds.height
+//    let screenHeight = UIScreen.main.bounds.height
     
     @Environment(\.presentationMode) var presentationMode
     
