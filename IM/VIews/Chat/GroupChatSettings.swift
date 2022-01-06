@@ -1,13 +1,13 @@
 //
-//  ChatSettings.swift
+//  GroupChatSettings.swift
 //  IM
 //
-//  Created by admin on 2022/1/5.
+//  Created by admin on 2022/1/6.
 //
 
 import SwiftUI
 
-struct ChatSettings: View {
+struct GroupChatSettings: View {
     
     @State private var setTop = false
     
@@ -95,8 +95,8 @@ struct ChatSettings: View {
     }
 }
 
-struct ChatSettings_Previews: PreviewProvider {
+struct GroupChatSettings_Previews: PreviewProvider {
     static var previews: some View {
-        ChatSettings()
+        GroupChatSettings()
     }
 }
