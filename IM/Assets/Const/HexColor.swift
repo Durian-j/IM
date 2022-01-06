@@ -27,7 +27,7 @@ extension Color {
 
 struct IMColor {
     // 主题色
-    static var themeColor : Color = Color(hex: 0x2E59E6)
+    static var primaryColor : Color = Color(hex: 0x2E59E6)
     // 正文颜色
     static var textColor : Color = Color(hex: 0x333333)
     // 浅灰色

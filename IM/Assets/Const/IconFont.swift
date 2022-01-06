@@ -20,4 +20,8 @@ public enum IconFont: String {
     case about = "\u{e622}"
     // 通用
     case general = "\u{e66a}"
+    // 三个点
+    case point = "\u{e653}"
+    // 加号
+    case plusSign = "\u{e616}"
 }

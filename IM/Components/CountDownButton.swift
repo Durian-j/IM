@@ -21,7 +21,7 @@ struct CountDownButton: View {
         }, label: {
             Text((countDown == 61) ? "获取验证码" : "请\(countDown)s之后重试")
                 .font(.system(size: 15))
-                .foregroundColor(IMColor.themeColor)
+                .foregroundColor(IMColor.primaryColor)
         })
         .disabled(countDown != 61)
         .onDisappear{

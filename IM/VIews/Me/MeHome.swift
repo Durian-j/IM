@@ -9,8 +9,6 @@ import SwiftUI
 
 struct MeHome: View {
     
-//    let screenWidth = UIScreen.main.bounds.width
-    
     let safeAreaInsets = UIApplication.shared.windows.first?.safeAreaInsets
     
     var body: some View {

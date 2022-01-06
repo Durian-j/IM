@@ -9,8 +9,6 @@ import SwiftUI
 
 struct LoginPage: View {
     
-//    let screenWidth = UIScreen.main.bounds.width
-    
     let safeAreaInsets = UIApplication.shared.windows.first?.safeAreaInsets
     
     @State private var showLogin: Bool = true
@@ -35,7 +33,7 @@ struct LoginPage: View {
                     }
                     
                     Rectangle()
-                        .fill(IMColor.themeColor)
+                        .fill(IMColor.primaryColor)
                         .frame(width: 30, height: 20)
                     
                     Button(action: {
@@ -57,7 +55,7 @@ struct LoginPage: View {
             }
             .frame(width: screenWidth, height: 250, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
             .padding(.top,safeAreaInsets?.top ?? 0 + 8.0)
-            .background(IMColor.themeColor)
+            .background(IMColor.primaryColor)
             
             Spacer()
         }

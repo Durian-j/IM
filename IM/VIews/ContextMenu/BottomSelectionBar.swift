@@ -13,8 +13,6 @@ struct BottomSelectionBar: View {
     
     @Binding var groupFullPagePresented: Bool
     
-    @Binding var showContextMenu: Bool
-    
     @EnvironmentObject var model: ContactModel
     
     var body: some View {
@@ -29,7 +27,6 @@ struct BottomSelectionBar: View {
             Spacer()
             Button(action: {
                 groupFullPagePresented = false
-                showContextMenu = false
             }, label: {
                 Text("确定\(model.selectedList.count > 0 ? "·" + String(model.selectedList.count) : "" )").font(.system(size: 14))
             })
@@ -46,6 +43,6 @@ struct BottomSelectionBar: View {
 
 struct BottomSelectionBar_Previews: PreviewProvider {
     static var previews: some View {
-        BottomSelectionBar(groupFullPagePresented: .constant(false), showContextMenu: .constant(false))
+        BottomSelectionBar(groupFullPagePresented: .constant(false))
     }
 }
