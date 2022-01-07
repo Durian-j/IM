@@ -37,7 +37,7 @@ struct BottomSelectionBar: View {
         }
         .padding(.horizontal)
         .frame(height: (safeAreaInsets?.bottom ?? 0) + 50)
-        .background(Color(hex: 0xF4F5F9))
+        .background(Color("light_gray"))
     }
 }
 

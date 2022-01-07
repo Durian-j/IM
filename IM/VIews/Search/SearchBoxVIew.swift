@@ -15,7 +15,7 @@ struct SearchBoxVIew: View {
         
         ZStack{
                 
-            Rectangle().fill(Color(hex: 0xF5F5F5)).frame(height: 30).foregroundColor(.white).cornerRadius(5).padding(10)
+            Rectangle().fill(Color("medium_gray")).frame(height: 30).foregroundColor(.white).cornerRadius(5).padding(10)
             
             HStack{
                 Image(systemName: "magnifyingglass").font(.system(size: 17))

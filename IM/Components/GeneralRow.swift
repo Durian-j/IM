@@ -11,7 +11,7 @@ struct GeneralRow: View {
     
     var title: String
     var showDivider: Bool = true
-    var color: Color = IMColor.textColor
+    var color: Color = Color("text_color")
     var width: CGFloat = screenWidth - 30
     var leading: AnyView = AnyView(EmptyView())
     var trailing: Image = Image("")
@@ -43,7 +43,7 @@ struct GeneralRow: View {
 struct GeneralRow_Previews: PreviewProvider {
     static var previews: some View {
         ZStack{
-            Color(hex: 0xF4F5F9).edgesIgnoringSafeArea(.all)
+            Color("light_gray").edgesIgnoringSafeArea(.all)
             GeneralRow(title: "我的收藏", showDivider: true, leading: AnyView(Image(systemName: "person")), trailing: Image(systemName: "chevron.right")
             )
         }

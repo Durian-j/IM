@@ -17,7 +17,7 @@ struct SearchFullScreenView: View {
         ScrollView{
             HStack{
                 ZStack{
-                    Rectangle().fill().frame(height: 30).foregroundColor(Color(hex: 0xF5F5F5)).cornerRadius(5).padding(12.5)
+                    Rectangle().fill().frame(height: 30).foregroundColor(Color("medium_gray")).cornerRadius(5).padding(12.5)
                     
                     HStack{
                         Image(systemName: "magnifyingglass")

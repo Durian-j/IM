@@ -33,7 +33,7 @@ struct LoginPage: View {
                     }
                     
                     Rectangle()
-                        .fill(IMColor.primaryColor)
+                        .fill(Color("primary_blue"))
                         .frame(width: 30, height: 20)
                     
                     Button(action: {
@@ -55,7 +55,7 @@ struct LoginPage: View {
             }
             .frame(width: screenWidth, height: 250, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
             .padding(.top,safeAreaInsets?.top ?? 0 + 8.0)
-            .background(IMColor.primaryColor)
+            .background(Color("primary_blue"))
             
             Spacer()
         }

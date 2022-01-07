@@ -15,7 +15,7 @@ struct MeHome: View {
         
         ZStack{
             
-            Color(hex: 0xF4F5F9).edgesIgnoringSafeArea(.all)
+            Color("light_gray").edgesIgnoringSafeArea(.all)
             
             VStack(spacing: 20){
                 
@@ -37,7 +37,7 @@ struct MeHome: View {
                         }
                         .padding()
                         .padding(.top, safeAreaInsets?.top)
-                        .foregroundColor(IMColor.textColor)
+                        .foregroundColor(Color("text_color"))
                         .frame(width: screenWidth, height: 170)
                         .background(Color.white)
                         

@@ -20,7 +20,7 @@ struct MessageView: View {
                 MessageAvatar(avatarList: message.avatarList, personNum: message.avatarNum)
                 
                 VStack(alignment: .leading, spacing: 3){
-                    Text(message.name).font(.system(size: 17)).foregroundColor(IMColor.textColor)
+                    Text(message.name).font(.system(size: 17)).foregroundColor(Color("text_color"))
                     Text(message.messageDes).foregroundColor(.gray).font(.system(size: 14))
                 }
                 .padding(.leading,5)

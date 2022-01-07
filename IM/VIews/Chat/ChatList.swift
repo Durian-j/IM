@@ -36,7 +36,7 @@ struct ChatList: View {
                 
             }
         }
-        .background(Color(hex: 0xF4F5F9))
+        .background(Color("light_gray"))
     }
 }
 

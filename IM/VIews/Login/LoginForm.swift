@@ -43,7 +43,7 @@ struct LoginForm: View {
                             showPwd.toggle()
                         }){
                             Image(systemName: showPwd ? "eye": "eye.slash")
-                                .foregroundColor(IMColor.primaryColor)
+                                .foregroundColor(Color("primary_blue"))
                         }
                     }
                 }else{
@@ -84,7 +84,7 @@ struct LoginForm: View {
                 }
                 .foregroundColor(.white)
                 .frame(width: 260, height: 42, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                .background(RoundedCorners(color: IMColor.primaryColor, tl: 20, tr: 0, bl: 0, br: 20))
+                .background(RoundedCorners(color: Color("primary_blue"), tl: 20, tr: 0, bl: 0, br: 20))
             }
             
             Button(action: {
@@ -92,7 +92,7 @@ struct LoginForm: View {
             }) {
                 Text(showVertifyCode ? "密码登录": "验证码登录")
                     .font(.system(size: 15))
-                    .foregroundColor(IMColor.primaryColor)
+                    .foregroundColor(Color("primary_blue"))
             }
             .padding(.top, 10)
                 

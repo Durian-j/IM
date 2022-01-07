@@ -23,7 +23,7 @@ struct SendBox: View {
             Divider().overlay(Color.black).padding(.zero)
             
             ZStack {
-                Color(hex: 0xF4F5F9)
+                Color("light_gray")
                 
                 VStack {
                     

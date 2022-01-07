@@ -22,7 +22,7 @@ struct ContactFunctionGroup: View {
                 })
                 Text("新的朋友")
                     .font(.system(size: 14))
-                    .foregroundColor(IMColor.textColor)
+                    .foregroundColor(Color("text_color"))
             }
             
             VStack(spacing: 6){
@@ -37,7 +37,7 @@ struct ContactFunctionGroup: View {
                 })
                 Text("群聊")
                     .font(.system(size: 14))
-                    .foregroundColor(IMColor.textColor)
+                    .foregroundColor(Color("text_color"))
             }
             
             Spacer()

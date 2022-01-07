@@ -19,7 +19,7 @@ struct ChatSettings: View {
         
         ZStack{
             
-            Color(hex: 0xF4F5F9).edgesIgnoringSafeArea(.all)
+            Color("light_gray").edgesIgnoringSafeArea(.all)
             
             VStack(spacing: 20){
                 
@@ -27,7 +27,7 @@ struct ChatSettings: View {
                     NavigationLink(destination: ContactDetailView(), label: {
                         HStack(spacing: 12){
                             Image("avatar1").resizable().scaledToFill().frame(width: 50, height: 50).clipShape(Circle())
-                            Text("杀生丸").foregroundColor(IMColor.textColor)
+                            Text("杀生丸").foregroundColor(Color("text_color"))
                         }
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding(.all, 10)
@@ -41,11 +41,11 @@ struct ChatSettings: View {
                         HStack(spacing: 15){
                             ZStack{
                                 Circle()
-                                    .fill(IMColor.lightGray) //给圆形填充颜色
+                                    .fill(Color("medium_gray"))
                                     .frame(width: 40, height: 40)
                                 Image(systemName: "plus").foregroundColor(Color.gray).font(.system(size: 22))
                             }
-                            Text("发起群聊").foregroundColor(IMColor.textColor)
+                            Text("发起群聊").foregroundColor(Color("text_color"))
                         }
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding(.all, 10)
@@ -67,7 +67,7 @@ struct ChatSettings: View {
                         .padding(.horizontal, 12)
                         .frame(width: screenWidth, height: 46)
                         .background(Color.white)
-                        .foregroundColor(IMColor.textColor)
+                        .foregroundColor(Color("text_color"))
                         .toggleStyle(CustomToggleStyle())
                         
                     
@@ -75,14 +75,14 @@ struct ChatSettings: View {
                         .padding(.horizontal, 12)
                         .frame(width: screenWidth, height: 46)
                         .background(Color.white)
-                        .foregroundColor(IMColor.textColor)
+                        .foregroundColor(Color("text_color"))
                         .toggleStyle(CustomToggleStyle())
                 }
                 
                 Button(action: {}, label: {
                     Text("删除聊天记录")
                         .font(.system(size: 16))
-                        .foregroundColor(IMColor.red)
+                        .foregroundColor(Color("red_color"))
                 })
                     .frame(width: screenWidth, height: 40)
                     .background(Color.white)
@@ -91,7 +91,9 @@ struct ChatSettings: View {
             }
             .padding()
         }
+        .navigationBarBackButtonHidden(true)
         .navigationBarTitle("聊天设置", displayMode: .inline)
+        .navigationBarItems(leading: NavigationBackButton().offset(x: -8))
     }
 }
 

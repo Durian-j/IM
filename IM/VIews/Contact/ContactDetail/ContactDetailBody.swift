@@ -9,14 +9,12 @@ import SwiftUI
 
 struct ContactDetailBody: View {
     
-    @Environment(\.presentationMode) var presentationMode
-    
     var body: some View {
         
         ZStack{
             
             Rectangle()
-                .fill(IMColor.darkGray)
+                .fill(Color("dark_gray"))
                 .frame(width: screenWidth, height: 250)
                 .position(x: screenWidth / 2, y: 125)
             
@@ -34,10 +32,10 @@ struct ContactDetailBody: View {
                     VStack(spacing: 5){
                         Image(systemName: "ellipsis.bubble.fill")
                             .font(.system(size: 24))
-                            .foregroundColor(IMColor.textColor)
+                            .foregroundColor(Color("text_color"))
                         Text("聊天")
                             .font(.system(size: 14))
-                            .foregroundColor(IMColor.textColor)
+                            .foregroundColor(Color("text_color"))
                     }
                 }).padding(.top, 10)
                 
@@ -62,7 +60,7 @@ struct ContactDetailBody: View {
             Button(action: {}, label: {
                 Text("删除")
                     .font(.system(size: 16))
-                    .foregroundColor(IMColor.red)
+                    .foregroundColor(Color("red_color"))
             })
                 .frame(width: screenWidth - 30, height: 40)
                 .background(Color.white)
@@ -70,7 +68,7 @@ struct ContactDetailBody: View {
             
         }
         .frame(width: screenWidth, height: screenHeight, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-        .background(Color(hex: 0xF4F5F9))
+        .background(Color("light_gray"))
         
     }
 }

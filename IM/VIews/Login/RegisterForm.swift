@@ -60,7 +60,7 @@ struct RegisterForm: View {
             }
             .foregroundColor(.white)
             .frame(width: 260, height: 42, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-            .background(RoundedCorners(color: IMColor.primaryColor, tl: 20, tr: 0, bl: 0, br: 20))
+            .background(RoundedCorners(color: Color("primary_blue"), tl: 20, tr: 0, bl: 0, br: 20))
             
                 
             Divider().padding(.top, 20)

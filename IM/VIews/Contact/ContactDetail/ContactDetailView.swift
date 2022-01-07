@@ -32,24 +32,24 @@ struct ContactDetailView: View {
         var body: some View {
             
             ZStack(alignment: .bottom) {
-                Rectangle().fill(IMColor.darkGray)
+                Rectangle().fill(Color("dark_gray"))
                 
                 HStack {
                     
                     Button(action: {
                         self.presentationMode.wrappedValue.dismiss()
                     }, label: {
-                        HStack(spacing: 0){
-                            Image(systemName: "chevron.left").foregroundColor(.white).font(.system(size: 20))
-                            Text("通讯录").foregroundColor(.white)
-                        }
+                        HStack(spacing: 4){
+                            Image(systemName: "chevron.left").font(Font.system(size: 22))
+                            Text("通讯录")
+                        }.foregroundColor(.white)
                         
                     }).padding()
                     
                     Spacer()
                 }
+                .offset(x: -8)
                 .frame(height: 44)
-                
             }
             .frame(maxWidth: .infinity)
         }

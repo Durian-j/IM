@@ -73,7 +73,7 @@ struct ContactSectionInfo: View {
     var body: some View {
         Image(contact.avatar).resizable().scaledToFill().frame(width: 45, height: 45).clipShape(Circle())
         VStack(alignment: .leading, spacing: 3){
-            Text(contact.name).foregroundColor(IMColor.textColor)
+            Text(contact.name).foregroundColor(Color("text_color"))
             Text(contact.account).font(.system(size: 14)).foregroundColor(.gray)
         }
     }

@@ -27,7 +27,7 @@ struct ChatView: View {
                     destination: ChatSettings(),
                     label: {
                         Text(IconFont.point.rawValue)
-                            .foregroundColor(IMColor.textColor)
+                            .foregroundColor(Color("text_color"))
                             .font(.custom("iconfont", size: 18))
                     })
             )
