@@ -14,7 +14,7 @@ struct GeneralRow: View {
     var color: Color = Color("text_color")
     var width: CGFloat = screenWidth - 30
     var leading: AnyView = AnyView(EmptyView())
-    var trailing: Image = Image("")
+    var trailing: AnyView = AnyView(EmptyView())
     
     var body: some View {
         VStack(alignment: .leading, spacing: 0){
@@ -26,10 +26,9 @@ struct GeneralRow: View {
                     .foregroundColor(color)
                 Spacer()
                 trailing
-                    .font(.system(size: 14))
             }
             .padding(.init(top: 0, leading: 15, bottom: 0, trailing: 15))
-            .frame(width: width, height: 46,alignment: .leading)
+            .frame(width: width, height: 46, alignment: .leading)
             
             if showDivider {
                 Divider()
@@ -44,7 +43,7 @@ struct GeneralRow_Previews: PreviewProvider {
     static var previews: some View {
         ZStack{
             Color("light_gray").edgesIgnoringSafeArea(.all)
-            GeneralRow(title: "我的收藏", showDivider: true, leading: AnyView(Image(systemName: "person")), trailing: Image(systemName: "chevron.right")
+            GeneralRow(title: "我的收藏", showDivider: true, leading: AnyView(Image(systemName: "person")), trailing: AnyView(Image(systemName: "chevron.right"))
             )
         }
     }

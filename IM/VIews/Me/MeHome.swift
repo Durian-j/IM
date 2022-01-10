@@ -48,27 +48,27 @@ struct MeHome: View {
                                ,leading: AnyView(Text(IconFont.accountSecurity.rawValue)
                                                     .foregroundColor(Color(hex: 0x46a6fa))
                                                     .font(.custom("iconfont", size: 18))),
-                               trailing: Image(systemName: "chevron.right"))
+                               trailing: AnyView(Image(systemName: "chevron.right")))
                     GeneralRow(title: "消息通知",width: screenWidth
                                ,leading: AnyView(Text(IconFont.notification.rawValue)
                                                     .foregroundColor(Color(hex: 0x2bd9a4))
                                                     .font(.custom("iconfont", size: 18))),
-                               trailing: Image(systemName: "chevron.right"))
+                               trailing: AnyView(Image(systemName: "chevron.right")))
                     GeneralRow(title: "隐私设置",width: screenWidth
                                ,leading: AnyView(Text(IconFont.privacy.rawValue)
                                                     .foregroundColor(Color(hex: 0xfdcb76))
                                                     .font(.custom("iconfont", size: 18))),
-                               trailing: Image(systemName: "chevron.right"))
+                               trailing: AnyView(Image(systemName: "chevron.right")))
                     GeneralRow(title: "通用",width: screenWidth
                                ,leading: AnyView(Text(IconFont.general.rawValue)
                                                     .foregroundColor(Color(hex: 0x19cec9))
                                                     .font(.custom("iconfont", size: 18))),
-                               trailing: Image(systemName: "chevron.right"))
+                               trailing: AnyView(Image(systemName: "chevron.right")))
                     GeneralRow(title: "关于",width: screenWidth
                                ,leading: AnyView(Text(IconFont.about.rawValue)
                                                     .foregroundColor(Color(hex: 0x98a9ff))
                                                     .font(.custom("iconfont", size: 18))),
-                               trailing: Image(systemName: "chevron.right"))
+                               trailing: AnyView(Image(systemName: "chevron.right")))
                 }
                 
                 Spacer()

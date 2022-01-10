@@ -19,7 +19,7 @@ struct MessageListView: View {
             VStack{
                 ForEach(messages) { message in
                     NavigationLink(
-                        destination: ChatView(title: message.name),
+                        destination: ChatView(title: message.name, membersNumber: message.avatarList.count),
                         label: {
                             MessageView(message: message)
                         })

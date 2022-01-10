@@ -11,6 +11,8 @@ struct ChatView: View {
     
     var title: String
     
+    var membersNumber: Int
+    
     var body: some View {
         
         GeometryReader { proxy in
@@ -24,7 +26,7 @@ struct ChatView: View {
             .navigationBarTitle(title, displayMode: .inline)
             .navigationBarItems(
                 trailing: NavigationLink(
-                    destination: ChatSettings(),
+                    destination: destinationView(),
                     label: {
                         Text(IconFont.point.rawValue)
                             .foregroundColor(Color("text_color"))
@@ -33,10 +35,20 @@ struct ChatView: View {
             )
         }
     }
+    
+    func destinationView() -> some View {
+        return Group {
+            if membersNumber > 1 {
+                GroupChatSettings()
+            } else {
+                ChatSettings()
+            }
+        }
+    }
 }
 
 struct ChatView_Previews: PreviewProvider {
     static var previews: some View {
-        ChatView(title: "tom")
+        ChatView(title: "tom", membersNumber: 1)
     }
 }
