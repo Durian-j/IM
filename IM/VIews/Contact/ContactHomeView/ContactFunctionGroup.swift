@@ -11,8 +11,7 @@ struct ContactFunctionGroup: View {
     var body: some View {
         HStack(spacing: 40){
             VStack(spacing: 6){
-                Button(action: {
-                }, label: {
+                NavigationLink(destination: NewFriendsPage(), label: {
                     ZStack {
                         Circle().fill(LinearGradient(gradient: Gradient(colors: [Color(hex: 0x46A6FA), Color(hex: 0x98A9FF)]),startPoint: .leading,endPoint: .trailing))
                         Image(systemName: "person.fill")
