@@ -42,8 +42,8 @@ struct ChatSettings: View {
                             ZStack{
                                 Circle()
                                     .fill(Color("medium_gray"))
-                                    .frame(width: 40, height: 40)
-                                Image(systemName: "plus").foregroundColor(Color.gray).font(.system(size: 22))
+                                    .frame(width: 50, height: 50)
+                                Image(systemName: "plus").foregroundColor(Color.gray).font(.system(size: 28))
                             }
                             Text("发起群聊").foregroundColor(Color("text_color"))
                         }

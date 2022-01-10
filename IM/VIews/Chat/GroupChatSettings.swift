@@ -41,9 +41,9 @@ struct GroupChatSettings: View {
                         HStack(spacing: 15){
                             ZStack{
                                 Circle()
-                                    .fill(Color("light_gray")) //给圆形填充颜色
-                                    .frame(width: 40, height: 40)
-                                Image(systemName: "plus").foregroundColor(Color.gray).font(.system(size: 22))
+                                    .fill(Color("light_gray"))
+                                    .frame(width: 50, height: 50)
+                                Image(systemName: "plus").foregroundColor(Color.gray).font(.system(size: 28))
                             }
                             Text("发起群聊").foregroundColor(Color("text_color"))
                         }
