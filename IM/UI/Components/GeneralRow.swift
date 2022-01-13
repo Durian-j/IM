@@ -18,7 +18,6 @@ struct GeneralRow: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 0){
-            
             HStack{
                 leading
                 Text(title)

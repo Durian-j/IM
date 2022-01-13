@@ -62,22 +62,9 @@ struct ChatSettings: View {
                 }
                 
                 VStack(spacing: 0){
-                    
-                    Toggle("置顶聊天", isOn: $setTop)
-                        .padding(.horizontal, 12)
-                        .frame(width: screenWidth, height: 46)
-                        .background(Color.white)
-                        .foregroundColor(Color("text_color"))
-                        .toggleStyle(CustomToggleStyle())
-                    
+                    CustomToggle(title: "置顶聊天", isOn: $setTop)
                     Divider()
-                    
-                    Toggle("消息免打扰", isOn: $noDisturb)
-                        .padding(.horizontal, 12)
-                        .frame(width: screenWidth, height: 46)
-                        .background(Color.white)
-                        .foregroundColor(Color("text_color"))
-                        .toggleStyle(CustomToggleStyle())
+                    CustomToggle(title: "消息免打扰", isOn: $noDisturb)
                 }
                 
                 Button(action: {}, label: {
