@@ -1,5 +1,5 @@
 //
-//  AddFriendsPage.swift
+//  AddFriendsView.swift
 //  IM
 //
 //  Created by admin on 2021/12/30.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct AddFriendsPage: View {
+struct AddFriendsView: View {
     
     @State var searchAccount: String = ""
     
@@ -34,8 +34,10 @@ struct AddFriendsPage: View {
     }
 }
 
-struct AddFriendsPage_Previews: PreviewProvider {
+#if DEBUG
+struct AddFriendsView_Previews: PreviewProvider {
     static var previews: some View {
-        AddFriendsPage()
+        AddFriendsView()
     }
 }
+#endif

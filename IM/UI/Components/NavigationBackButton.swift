@@ -27,8 +27,10 @@ struct NavigationBackButton: View {
     }
 }
 
+#if DEBUG
 struct NavigationBackButton_Previews: PreviewProvider {
     static var previews: some View {
         NavigationBackButton()
     }
 }
+#endif

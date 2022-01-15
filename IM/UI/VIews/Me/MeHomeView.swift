@@ -1,5 +1,5 @@
 //
-//  MeHome.swift
+//  MeHomeView.swift
 //  IM
 //
 //  Created by sfere on 2021/12/2.
@@ -7,18 +7,11 @@
 
 import SwiftUI
 
-struct MeHome: View {
-    
-    let safeAreaInsets = UIApplication.shared.windows.first?.safeAreaInsets
-    
+struct MeHomeView: View {
     var body: some View {
-        
         ZStack{
-            
             Color("light_gray").edgesIgnoringSafeArea(.all)
-            
             VStack(spacing: 20){
-                
                 NavigationLink(
                     destination: /*@START_MENU_TOKEN@*/Text("Destination")/*@END_MENU_TOKEN@*/,
                     label: {
@@ -40,9 +33,7 @@ struct MeHome: View {
                         .foregroundColor(Color("text_color"))
                         .frame(width: screenWidth, height: 170)
                         .background(Color.white)
-                        
                     })
-                
                 VStack(spacing: 0){
                     GeneralRow(title: "账号与安全",width: screenWidth
                                ,leading: AnyView(Text(IconFont.accountSecurity.rawValue)
@@ -70,15 +61,16 @@ struct MeHome: View {
                                                     .font(.custom("iconfont", size: 18))),
                                trailing: AnyView(Image(systemName: "chevron.right")))
                 }
-                
                 Spacer()
             }
         }
     }
 }
 
-struct MeHome_Previews: PreviewProvider {
+#if DEBUG
+struct MeHomeView_Previews: PreviewProvider {
     static var previews: some View {
-        MeHome().ignoresSafeArea()
+        MeHomeView().ignoresSafeArea()
     }
 }
+#endif

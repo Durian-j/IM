@@ -21,8 +21,10 @@ struct ContactSectionHeader: View {
     }
 }
 
+#if DEBUG
 struct ContactSectionHeader_Previews: PreviewProvider {
     static var previews: some View {
         ContactSectionHeader(title: "A")
     }
 }
+#endif

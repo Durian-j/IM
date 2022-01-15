@@ -11,6 +11,8 @@ let screenWidth = UIScreen.main.bounds.width
 
 let screenHeight = UIScreen.main.bounds.height
 
+let safeAreaInsets = UIApplication.shared.windows.first?.safeAreaInsets
+
 struct ContentView: View {
     
     @State var isAuth: Bool = false
@@ -19,7 +21,7 @@ struct ContentView: View {
 //        if(isAuth){
 //            RootView()
 //        }else{
-//            LoginPage(isAuth: $isAuth).ignoresSafeArea(edges: .top)
+//            LoginView(isAuth: $isAuth).ignoresSafeArea(edges: .top)
 //        }
         RootView()
     }

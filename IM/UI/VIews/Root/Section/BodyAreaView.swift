@@ -10,39 +10,30 @@ import SwiftUI
 struct BodyAreaView: View {
     
     @State private var selection: Int = 0
-    
     @ObservedObject var state:RootState = RootState()
-    
     @Binding var showContextMenu: Bool
-    
     @Binding var addFriendsFlag: Bool
     
     var body: some View {
-        
         NavigationView{
-            
             TabView(selection: $selection){
-                
-                MessageListView()
+                MessageView()
                     .tabItem {
                         Item(type: .chat, selection: selection)
                     }
                     .tag(0)
-                
                 ContactHomeView()
                     .tabItem {
                         Item(type: .contact, selection: selection)
                     }
                     .tag(1)
-                
-                MeHome()
+                MeHomeView()
                     .tabItem {
                         Item(type: .setting, selection: selection)
                     }
                     .tag(2)
                     .ignoresSafeArea()
                     .navigationBarHidden(true)
-                
             }
             .onAppear {
 //                修复ios15滚动状态下状态栏和菜单栏透明问题
@@ -59,7 +50,11 @@ struct BodyAreaView: View {
             .navigationBarItems(trailing: navigationBarTrailingItems(selection: selection))
         }
     }
-    
+}
+
+// MARK: - NavigationBarTrailingItems
+
+private extension BodyAreaView {
     func navigationBarTrailingItems(selection: Int) -> AnyView {
         switch ItemType(rawValue: selection)! {
         case .chat:
@@ -84,7 +79,11 @@ struct BodyAreaView: View {
             return AnyView(EmptyView())
         }
     }
-    
+}
+
+// MARK: - Tab Enum
+
+private extension BodyAreaView {
     enum ItemType: Int {
         case chat
         case contact
@@ -100,7 +99,6 @@ struct BodyAreaView: View {
                 return Image(systemName: "gearshape")
             }
         }
-        
         var title: String {
             switch self {
             case .chat:
@@ -134,8 +132,10 @@ struct BodyAreaView: View {
     }
 }
 
+#if DEBUG
 struct BodyAreaView_Previews: PreviewProvider {
     static var previews: some View {
         BodyAreaView(showContextMenu: .constant(false), addFriendsFlag: .constant(false))
     }
 }
+#endif

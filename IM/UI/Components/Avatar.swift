@@ -39,10 +39,10 @@ extension View {
   }
 }
 
-//private extension Avatar
-
+#if DEBUG
 struct Avatar_Previews: PreviewProvider {
     static var previews: some View {
         Avatar(avatar: "avatar1", width: 100, height: 100, isCircle: false)
     }
 }
+#endif

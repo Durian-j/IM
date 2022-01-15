@@ -1,5 +1,5 @@
 //
-//  GroupChat.swift
+//  GroupChatView.swift
 //  IM
 //
 //  Created by sfere on 2021/12/24.
@@ -9,12 +9,10 @@ import SwiftUI
 
 import SwiftUI
 
-struct GroupChat: View {
+struct GroupChatView: View {
     
     @State var searchText: String = ""
-    
     @Binding var groupFullPagePresented: Bool
-    
     @State var contacListModel: ContactModel = ContactModel()
     
     var body: some View {
@@ -34,7 +32,6 @@ struct GroupChat: View {
                 Text("")
                     .frame(width: 60)
             }.padding(.top, 15)
-            
             ZStack{
                 Rectangle().fill().frame(height: 30).foregroundColor(Color("medium_gray")).cornerRadius(5).padding(12.5)
                 
@@ -46,16 +43,16 @@ struct GroupChat: View {
                         .font(.system(size: 16))
                 }.padding()
             }
-            
             ContactList(isAddressBook: false).environmentObject(contacListModel)
-            
             BottomSelectionBar(groupFullPagePresented: $groupFullPagePresented ).environmentObject(contacListModel)
         }
     }
 }
 
-struct GroupChat_Previews: PreviewProvider {
+#if DEBUG
+struct GroupChatView_Previews: PreviewProvider {
     static var previews: some View {
-        GroupChat(groupFullPagePresented: .constant(false))
+        GroupChatView(groupFullPagePresented: .constant(false))
     }
 }
+#endif

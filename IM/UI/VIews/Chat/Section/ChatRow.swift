@@ -15,14 +15,16 @@ struct ChatRow: View {
     var body: some View {
         HStack(alignment: .top, spacing: 8) {
             if isMe { Spacer() } else { Avatar(icon: message.avatar) }
-            
             if message.type == .text { TextMessage(isMe: isMe, text: message.text ) }
-            
             if isMe { Avatar(icon: message.avatar) } else { Spacer() }
         }
         .padding(.init(top: 8, leading: 12, bottom: 8, trailing: 12))
     }
-    
+}
+
+// MARK: - Avatar
+
+private extension ChatRow{
     struct Avatar: View {
         let icon: String
         
@@ -33,7 +35,11 @@ struct ChatRow: View {
                 .cornerRadius(25)
         }
     }
-    
+}
+
+// MARK: - TextMessage
+
+private extension ChatRow{
     struct TextMessage: View {
         let isMe: Bool
         let text: String
@@ -58,7 +64,11 @@ struct ChatRow: View {
                 .foregroundColor(isMe ? Color(hex: 0x165AF7) : Color.white)
         }
     }
-    
+}
+
+// MARK: - Arrow
+
+private extension ChatRow{
     struct Arrow: View {
         let isMe: Bool
         
@@ -75,9 +85,11 @@ struct ChatRow: View {
     }
 }
 
+#if DEBUG
 struct ChatRow_Previews: PreviewProvider {
     static var previews: some View {
         ChatRow(message: Chat(id: 1, name: "nm", avatar: "a1", text: "十六进制颜色码就是在软件中设定颜色值的代码。在很多软件中，都会遇到设定颜色值的问题。人的眼睛看到的颜色有两种", type: Chat.MessageType.text), isMe: true)
             .previewLayout(.sizeThatFits)
     }
 }
+#endif

@@ -9,10 +9,7 @@ import SwiftUI
 
 struct BottomSelectionBar: View {
     
-    let safeAreaInsets = UIApplication.shared.windows.first?.safeAreaInsets
-    
     @Binding var groupFullPagePresented: Bool
-    
     @EnvironmentObject var model: ContactModel
     
     var body: some View {

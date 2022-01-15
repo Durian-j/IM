@@ -10,13 +10,10 @@ import SwiftUI
 struct ContextMenuView: View {
     
     @State var groupFullPagePresented: Bool = false
-    
     @Binding var showContextMenu: Bool
-    
     @Binding var addFriendsFlag: Bool
     
     var body: some View {
-        
         VStack (spacing: 0) {
             Button(action: {
                 groupFullPagePresented = true
@@ -33,7 +30,7 @@ struct ContextMenuView: View {
             .fullScreenCover(isPresented: $groupFullPagePresented, onDismiss: {
                 showContextMenu = false
             }, content: {
-                GroupChat(groupFullPagePresented: $groupFullPagePresented)
+                GroupChatView(groupFullPagePresented: $groupFullPagePresented)
                     .ignoresSafeArea(.container, edges: .bottom)
             })
             
@@ -41,7 +38,6 @@ struct ContextMenuView: View {
                 .fill(Color.white)
                 .frame(width: 100, height: 1)
                 .opacity(0.3)
-            
             Button(action: {
                 addFriendsFlag = true
                 showContextMenu = false
@@ -60,8 +56,10 @@ struct ContextMenuView: View {
     }
 }
 
+#if DEBUG
 struct ContextMenuView_Previews: PreviewProvider {
     static var previews: some View {
         ContextMenuView(showContextMenu: .constant(false), addFriendsFlag: .constant(false))
     }
 }
+#endif

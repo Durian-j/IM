@@ -10,24 +10,11 @@ import SwiftUI
 struct ContactList: View {
     
     @State var wordNavigationtappedIndex: Int = 0
-    
     var isAddressBook: Bool
-    
-//    @State private var contacts: [Contact] = Contact.all
-    
     @EnvironmentObject var model: ContactModel
-    
-//    var contactDict = [String: Array<Contact>]()
     
     init(isAddressBook: Bool = true){
         self.isAddressBook = isAddressBook
-//        contacts.forEach{ (contact) in
-//            if(!contactDict.keys.contains(contact.firstLetter)){
-//                contactDict.updateValue([contact], forKey: contact.firstLetter)
-//            }else{
-//                contactDict[contact.firstLetter]!.append(contact)
-//            }
-//        }
     }
     
     var body: some View {
@@ -51,11 +38,5 @@ struct ContactList: View {
             }
 //            WordNavigation(wordNavigationtappedIndex: $wordNavigationtappedIndex)
         }
-    }
-}
-
-struct ContactList_Previews: PreviewProvider {
-    static var previews: some View {
-        ContactList()
     }
 }

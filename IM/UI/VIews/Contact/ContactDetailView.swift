@@ -26,16 +26,17 @@ struct ContactDetailView: View {
         .navigationBarHidden(true)
         .navigationBarTitle("", displayMode: .inline)
     }
+}
+
+// MARK: - Navigation
+
+private extension ContactDetailView{
     
     struct Navigation: View {
-        
         var body: some View {
-            
             ZStack(alignment: .bottom) {
                 Rectangle().fill(Color("dark_gray"))
-                
                 HStack {
-                    
                     Button(action: {
                         self.presentationMode.wrappedValue.dismiss()
                     }, label: {
@@ -45,7 +46,6 @@ struct ContactDetailView: View {
                         }.foregroundColor(.white)
                         
                     }).padding()
-                    
                     Spacer()
                 }
                 .offset(x: -8)
@@ -53,23 +53,27 @@ struct ContactDetailView: View {
             }
             .frame(maxWidth: .infinity)
         }
-        
         @Environment(\.presentationMode) var presentationMode
     }
+}
+
+// MARK: - NavigationKey
+
+private extension ContactDetailView{
     
     struct NavigationKey: PreferenceKey {
         typealias Value = [Anchor<CGPoint>]
-        
         static var defaultValue: Value = []
-        
         static func reduce(value: inout Value, nextValue: () -> Value) {
             value.append(contentsOf: nextValue())
         }
     }
 }
 
+#if DEBUG
 struct MomentView_Previews: PreviewProvider {
     static var previews: some View {
         ContactDetailView()
     }
 }
+#endif

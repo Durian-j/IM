@@ -10,19 +10,13 @@ import SwiftUI
 struct GroupChatSettings: View {
     
     @State private var setTop = false
-    
     @State private var noDisturb = false
-    
     @State var groupChatFromChat: Bool = false
     
     var body: some View {
-        
         ZStack{
-            
             Color("light_gray").edgesIgnoringSafeArea(.all)
-            
             VStack(spacing: 10){
-                
                 VStack(alignment: .leading, spacing: 0){
                     GeneralRow(title: "多人聊天名称",width: screenWidth, trailing: AnyView(HStack(spacing: 2){
                         Text("研发工作组")
@@ -44,7 +38,6 @@ struct GroupChatSettings: View {
                                     Text("邀请").font(.system(size: 15))
                                 }
                             })
-                            
                             Button(action: {}, label: {
                                 HStack(spacing: 2){
                                     Image(systemName: "minus.circle.fill")
@@ -52,26 +45,25 @@ struct GroupChatSettings: View {
                                 }.foregroundColor(Color("red_color"))
                             }).padding(.leading, 25)
                         }.padding(EdgeInsets(top: 10, leading: 15, bottom: 10, trailing: 15))
-                        
                         HStack(spacing: 35){
                             VStack(spacing: 5){
-                                Image("avatar1").resizable().scaledToFill().frame(width: 40, height: 40).clipShape(Circle())
+                                Avatar(avatar: "avatar1", width: 40, height: 40)
                                 Text("Tom").font(.system(size: 14)).foregroundColor(Color("text_color"))
                             }
                             VStack(spacing: 5){
-                                Image("a1").resizable().scaledToFill().frame(width: 40, height: 40).clipShape(Circle())
+                                Avatar(avatar: "a1", width: 40, height: 40)
                                 Text("Jerry").font(.system(size: 14)).foregroundColor(Color("text_color"))
                             }
                             VStack(spacing: 5){
-                                Image("a2").resizable().scaledToFill().frame(width: 40, height: 40).clipShape(Circle())
+                                Avatar(avatar: "a2", width: 40, height: 40)
                                 Text("Jack").font(.system(size: 14)).foregroundColor(Color("text_color"))
                             }
                             VStack(spacing: 5){
-                                Image("a3").resizable().scaledToFill().frame(width: 40, height: 40).clipShape(Circle())
+                                Avatar(avatar: "a3", width: 40, height: 40)
                                 Text("LiLei").font(.system(size: 14)).foregroundColor(Color("text_color"))
                             }
                             VStack(spacing: 5){
-                                Image("a4").resizable().scaledToFill().frame(width: 40, height: 40).clipShape(Circle())
+                                Avatar(avatar: "a4", width: 40, height: 40)
                                 Text("HanMeiMei").font(.system(size: 14)).foregroundColor(Color("text_color")).lineLimit(1)
                             }
                         }.padding(EdgeInsets(top: 0, leading: 15, bottom: 12, trailing: 15))
@@ -79,23 +71,19 @@ struct GroupChatSettings: View {
                     .frame(maxWidth: .infinity)
                     .background(Color.white)
                 }
-                
                 VStack(spacing: 0){
                     GeneralRow(title: "聊天记录",width: screenWidth, trailing: AnyView(Image(systemName: "chevron.right")))
                 }
-                
                 VStack(spacing: 0){
                     CustomToggle(title: "置顶聊天", isOn:  $setTop)
                     Divider()
                     CustomToggle(title: "消息免打扰", isOn:  $noDisturb)
                 }
-                
                 Button(action: {}, label: {
                     Text("退出讨论组")
                         .font(.system(size: 16))
                         .foregroundColor(Color("red_color"))
                 }).frame(width: screenWidth, height: 40).background(Color.white)
-                
                 Spacer()
             }
             .padding(.top, 10)
@@ -106,8 +94,10 @@ struct GroupChatSettings: View {
     }
 }
 
+#if DEBUG
 struct GroupChatSettings_Previews: PreviewProvider {
     static var previews: some View {
         GroupChatSettings()
     }
 }
+#endif

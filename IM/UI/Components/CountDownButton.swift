@@ -49,8 +49,10 @@ struct CountDownButton: View {
     }
 }
 
+#if DEBUG
 struct CountDownButton_Previews: PreviewProvider {
     static var previews: some View {
         CountDownButton(vertifyCode: .constant("123"))
     }
 }
+#endif

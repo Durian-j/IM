@@ -10,13 +10,9 @@ import SwiftUI
 struct ContactSection: View {
     
     var isAddressBook: Bool = true
-    
     var contact: Contact
-    
     @State var isSelect: Bool = false
-    
     @EnvironmentObject var model: ContactModel
-    
     var index: Int {
         model.contactList.firstIndex(where: { $0.id == contact.id })!
     }
@@ -68,19 +64,25 @@ struct ContactSection: View {
     }
 }
 
-struct ContactSectionInfo: View {
-    var contact: Contact
-    var body: some View {
-        Image(contact.avatar).resizable().scaledToFill().frame(width: 45, height: 45).clipShape(Circle())
-        VStack(alignment: .leading, spacing: 3){
-            Text(contact.name).foregroundColor(Color("text_color"))
-            Text(contact.account).font(.system(size: 14)).foregroundColor(.gray)
+// MARK: - ContactSectionInfo
+
+private extension ContactSection{
+    struct ContactSectionInfo: View {
+        var contact: Contact
+        var body: some View {
+            Avatar(avatar: contact.avatar, width: 45, height: 45)
+            VStack(alignment: .leading, spacing: 3){
+                Text(contact.name).foregroundColor(Color("text_color"))
+                Text(contact.account).font(.system(size: 14)).foregroundColor(.gray)
+            }
         }
     }
 }
 
+#if DEBUG
 struct ContactSection_Previews: PreviewProvider {
     static var previews: some View {
         ContactSection(contact: Contact(id: 1, name: "李白", avatar: "a1", account: "123", firstLetter: "L", select: false))
     }
 }
+#endif

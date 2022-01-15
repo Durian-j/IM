@@ -10,16 +10,12 @@ import SwiftUI
 struct ChatView: View {
     
     var title: String
-    
     var membersNumber: Int
     
     var body: some View {
-        
         GeometryReader { proxy in
-            
             VStack (spacing: 0) {
                 ChatList()
-                
                 SendBox(proxy: proxy)
             }
             .edgesIgnoringSafeArea(.bottom)
@@ -35,7 +31,11 @@ struct ChatView: View {
             )
         }
     }
-    
+}
+
+// MARK: - destinationView
+
+private extension ChatView{
     func destinationView() -> some View {
         return Group {
             if membersNumber > 1 {
@@ -47,8 +47,10 @@ struct ChatView: View {
     }
 }
 
+#if DEBUG
 struct ChatView_Previews: PreviewProvider {
     static var previews: some View {
         ChatView(title: "tom", membersNumber: 1)
     }
 }
+#endif

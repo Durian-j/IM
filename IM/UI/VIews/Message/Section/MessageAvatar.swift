@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct MessageAvatar: View {
-    @State var avatarList = Array<String>()
     
+    @State var avatarList = Array<String>()
     @State var personNum: Int = 1
     
     var body: some View {
@@ -52,8 +52,10 @@ struct MessageAvatar: View {
     }
 }
 
+#if DEBUG
 struct MessageAvatar_Previews: PreviewProvider {
     static var previews: some View {
         MessageAvatar(avatarList: ["a1","a2","a3","a4"], personNum: 4)
     }
 }
+#endif

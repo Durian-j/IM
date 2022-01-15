@@ -38,6 +38,7 @@ struct GeneralRow: View {
     }
 }
 
+#if DEBUG
 struct GeneralRow_Previews: PreviewProvider {
     static var previews: some View {
         ZStack{
@@ -47,3 +48,4 @@ struct GeneralRow_Previews: PreviewProvider {
         }
     }
 }
+#endif

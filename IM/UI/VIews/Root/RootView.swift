@@ -10,19 +10,13 @@ import SwiftUI
 struct RootView: View {
     
     @State var showContextMenu: Bool = false
-    
     @State var modifyInfoFlag: Bool = false
-    
     @State var addFriendsFlag: Bool = false
 
     var body: some View {
-        
         NavigationView{
-            
             ZStack{
-                
                 BodyAreaView(showContextMenu: $showContextMenu, addFriendsFlag: $addFriendsFlag)
-                
                 // 聊天页面增加菜单栏
                 if showContextMenu {
                     GeometryReader { geometry in
@@ -36,9 +30,7 @@ struct RootView: View {
                         }
                     )
                 }
-                    
-                NavigationLink(destination: AddFriendsPage(),isActive: $addFriendsFlag, label: {
-                })
+                NavigationLink(destination: AddFriendsView(),isActive: $addFriendsFlag,label: {})
                     .navigationBarHidden(true)
                     .navigationBarTitle("", displayMode: .inline)
             }
@@ -46,8 +38,10 @@ struct RootView: View {
     }
 }
 
+#if DEBUG
 struct RootView_Previews: PreviewProvider {
     static var previews: some View {
         RootView()
     }
 }
+#endif

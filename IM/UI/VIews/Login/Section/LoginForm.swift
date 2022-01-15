@@ -13,22 +13,17 @@ struct LoginForm: View {
     @State private var password = ""
     @State private var showPwd: Bool = false
     @State private var vertifyCode: String = ""
-    
     @State private var showVertifyCode: Bool = false
     @Binding var isAuth: Bool
     
     var body: some View {
         VStack(spacing: 10){
-            
             TextField("账号/手机号/邮箱", text: $userName)
                 .font(.system(size: 15))
-            
             Divider()
-            
             Rectangle()
                 .fill(Color.white)
                 .frame(height: 10)
-            
             VStack{
                 if(!showVertifyCode) {
                     HStack{
@@ -74,7 +69,6 @@ struct LoginForm: View {
             Rectangle()
                 .fill(Color.white)
                 .frame(height: 15)
-            
             Button(action: {
                 print("账号是：\(userName)，密码是：\(password)，验证码是：\(vertifyCode)")
                 isAuth = true
@@ -95,14 +89,10 @@ struct LoginForm: View {
                     .foregroundColor(Color("primary_blue"))
             }
             .padding(.top, 10)
-                
             Divider().padding(.top, 10)
-            
             Color.white.edgesIgnoringSafeArea(.all)
-            
         }
-        .padding()
-        .padding(.top,20)
+        .padding(EdgeInsets(top: 20, leading: 15, bottom: 15, trailing: 15))
         .cornerRadius(20)
         .background(RoundedCorners(color: .white, tl: 20, tr: 0, bl: 0, br: 0))
         .offset(x: 0, y: 260)
@@ -110,8 +100,10 @@ struct LoginForm: View {
     }
 }
 
+#if DEBUG
 struct LoginForm_Previews: PreviewProvider {
     static var previews: some View {
         LoginForm(isAuth: .constant(false))
     }
 }
+#endif

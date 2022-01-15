@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct ContactHomeView: View {
-    
     var body: some View {
         VStack{
             ContactList().environmentObject(ContactModel())
@@ -16,8 +15,10 @@ struct ContactHomeView: View {
     }
 }
 
+#if DEBUG
 struct ContactHomeView_Previews: PreviewProvider {
     static var previews: some View {
         ContactHomeView()
     }
 }
+#endif
