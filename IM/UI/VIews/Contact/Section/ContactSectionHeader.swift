@@ -12,7 +12,7 @@ struct ContactSectionHeader: View {
     
     var body: some View {
         HStack{
-            Text(title)
+            Text(title).font(.system(size: 16)).foregroundColor(Color("text_color"))
             Spacer()
         }
         .padding(5)

@@ -19,15 +19,13 @@ struct ContactFunctionGroup: View {
                     .foregroundColor(Color("text_color"))
             }
             VStack(spacing: 6){
-                Button(action: {
-                }, label: {
+                NavigationLink(destination: GroupChatListView(), label: {
                     ContactFunctionButton(from: Color(hex: 0x2BD9A4), end: Color(hex: 0x19CEC9), icon: "bubble.left.and.bubble.right.fill", size: 20)
                 })
                 Text("群聊")
                     .font(.system(size: 14))
                     .foregroundColor(Color("text_color"))
             }
-            
             Spacer()
         }
         .padding(.leading, 15)
