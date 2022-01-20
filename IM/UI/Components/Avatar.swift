@@ -4,6 +4,8 @@
 //
 //  Created by admin on 2022/1/13.
 //
+//  通用头像图片
+//
 
 import SwiftUI
 

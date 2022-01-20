@@ -4,6 +4,8 @@
 //
 //  Created by sfere on 2021/11/24.
 //
+//  定义不规则圆角的样式
+//
 
 import Foundation
 import SwiftUI
