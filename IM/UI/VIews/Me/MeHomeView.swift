@@ -13,7 +13,7 @@ struct MeHomeView: View {
             Color("light_gray").edgesIgnoringSafeArea(.all)
             VStack(spacing: 20){
                 NavigationLink(
-                    destination: ListExample(),
+                    destination: PersonInfoView(),
                     label: {
                         HStack{
                             VStack(alignment: .leading){

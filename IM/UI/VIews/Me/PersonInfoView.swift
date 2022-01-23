@@ -7,12 +7,18 @@
 
 import SwiftUI
 import PartialSheet
+import UIKit
+import AVFoundation
+
 
 struct PersonInfoView: View {
     
     @State private var showingActionSheet = false
     @State private var backgroundColor = Color.white
     @EnvironmentObject var partialSheetManager: PartialSheetManager
+    @State private var showingAlert = false
+    @State private var showImagePicker = false
+    @State private var image: UIImage = UIImage()
     
     var body: some View {
         ScrollView{
@@ -33,10 +39,47 @@ struct PersonInfoView: View {
                             AvatarSelectRow(title: "查看大图", height: 30, paddingBottom: 8, action: {
                                 self.partialSheetManager.closePartialSheet()
                             })
-                            AvatarSelectRow(title: "拍照上传", action: {})
+                            AvatarSelectRow(title: "拍照上传", action: {
+                                AVCaptureDevice.requestAccess(for: .video, completionHandler: {accessGranted in
+                                    DispatchQueue.main.async {
+                                        if(accessGranted == true){
+                                            showImagePicker = true
+                                        }else{
+                                            showingAlert = true
+                                        }
+                                    }
+                                })
+                            })
                             AvatarSelectRow(title: "从相册选择",hasDivider: false, action: {})
                         }
                     }
+                }
+                .fullScreenCover(isPresented: $showImagePicker, content: {
+                    ImagePicker(sourceType: .savedPhotosAlbum) { image in
+                        self.image = image
+                    }.ignoresSafeArea()
+                })
+                .alert(isPresented: $showingAlert) {
+                    Alert(
+                        title: Text("请在Iphone的“设置->隐私->相机”选项中，允许IM访问您的相机"),
+                        primaryButton: .default(
+                            Text("取消")
+                        ),
+                        secondaryButton: .default(
+                            Text("设置"),
+                            action: {
+                                guard let url = URL(string: UIApplication.openSettingsURLString) else {
+                                    return
+                                }
+            
+                                if #available(iOS 10.0, *) {
+                                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                                } else {
+                                    UIApplication.shared.openURL(url)
+                                }
+                            }
+                        )
+                    )
                 }
                 Divider()
                 GeneralRow(title: "昵称", showDivider: true, width: screenWidth, trailing: AnyView(Image(systemName: "chevron.right")))
