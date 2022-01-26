@@ -14,17 +14,28 @@ struct MessageView: View {
     var body: some View {
         ScrollView{
             SearchBoxVIew()
-            VStack{
+            VStack(spacing: 0){
                 ForEach(messages) { message in
-                    NavigationLink(
-                        destination: ChatView(title: message.name, membersNumber: message.avatarList.count),
-                        label: {
-                            MessageRow(message: message)
-                        })
+                    VStack(spacing: 0){
+                        NavigationLink(
+                            destination: ChatView(title: message.name, membersNumber: message.avatarList.count),
+                            label: {
+                                MessageRow(message: message)
+                            })
+                            .buttonStyle(StaticButtonStyle())
+                        Divider()
+                    }
                 }
             }
         }
         .background(Color.white)
+    }
+}
+
+// 禁用 NavigationLink 和 Button 点击高亮效果
+struct StaticButtonStyle: ButtonStyle{
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
     }
 }
 
