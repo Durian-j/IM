@@ -34,6 +34,11 @@ struct MeHomeView: View {
                         .frame(width: screenWidth, height: 170)
                         .background(Color.white)
                     })
+                Button(action: {
+                    TestInd.shared.testst();
+                }, label: {
+                    Text("6666")
+                })
                 VStack(spacing: 0){
                     GeneralRow(title: "账号与安全",width: screenWidth
                                ,leading: AnyView(Text(IconFont.accountSecurity.rawValue)

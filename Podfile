@@ -7,4 +7,6 @@ target 'IM' do
 
   # Pods for IM
 
+  pod 'Alamofire', '~> 5.5'
+
 end

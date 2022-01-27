@@ -14,7 +14,7 @@ struct PersonInfoView: View {
     var body: some View {
         ScrollView{
             VStack(spacing: 0){
-                NavigationLink(destination: SwipeCellDemoView(), label: {
+                NavigationLink(destination: AvatarView(), label: {
                     HStack{
                         Text("头像").font(.system(size: 16))
                         Spacer()
