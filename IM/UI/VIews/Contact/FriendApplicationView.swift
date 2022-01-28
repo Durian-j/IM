@@ -49,9 +49,7 @@ struct FriendApplicationView: View {
             }.padding()
             Spacer()
         }
-        .navigationBarBackButtonHidden(true)
         .navigationBarTitle("好友申请", displayMode: .inline)
-        .navigationBarItems(leading: NavigationBackButton().offset(x: -8))
     }
 }
 

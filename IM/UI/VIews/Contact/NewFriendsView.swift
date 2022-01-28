@@ -25,9 +25,9 @@ struct NewFriendsView: View {
                 }
             }
         }
-        .navigationBarBackButtonHidden(true)
+//        .navigationBarBackButtonHidden(true)
         .navigationBarTitle("新的朋友", displayMode: .inline)
-        .navigationBarItems(leading: NavigationBackButton().offset(x: -8), trailing: Button(action: {}, label: {
+        .navigationBarItems(trailing: Button(action: {}, label: {
             Text("清空").font(.system(size: 16)).foregroundColor(Color.black)
         }))
     }

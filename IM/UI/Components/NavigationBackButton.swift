@@ -7,32 +7,38 @@
 //  自定义返回按钮
 //
 
+import Foundation
 import SwiftUI
 
-struct NavigationBackButton: View {
-    
-    var color: Color = Color.black
-    var title: String = "返回"
-    
-    @Environment(\.presentationMode) var mode
-    
-    var body: some View {
-        Button(action: {
-            self.mode.wrappedValue.dismiss()
-        }, label: {
-            HStack(spacing: 4){
-                Image(systemName: "chevron.left").font(Font.system(size: 17))
-                Text(title)
-                Spacer()
-            }.foregroundColor(color)
-        })
+struct NavigationBackButton: ViewModifier {
+
+    @Environment(\.presentationMode) var presentationMode
+    var color: UIColor
+    var text: String?
+
+    func body(content: Content) -> some View {
+        return content
+            .navigationBarBackButtonHidden(true)
+            .navigationBarItems(
+                leading: Button(action: {
+                    presentationMode.wrappedValue.dismiss()
+                }, label: {
+                    HStack(spacing: 2) {
+                        Image(systemName: "chevron.left").font(Font.system(size: 17, weight: .semibold))
+                            .foregroundColor(Color(color))
+
+                        if let text = text {
+                            Text(text)
+                                .foregroundColor(Color(color))
+                        }
+                    }.offset(x: -8)
+                })
+            )
     }
 }
 
-#if DEBUG
-struct NavigationBackButton_Previews: PreviewProvider {
-    static var previews: some View {
-        NavigationBackButton()
+extension View {
+    func navigationBackButton(color: UIColor, text: String? = nil) -> some View {
+        modifier(NavigationBackButton(color: color, text: text))
     }
 }
-#endif

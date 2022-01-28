@@ -88,9 +88,8 @@ struct GroupChatSettings: View {
             }
             .padding(.top, 10)
         }
-        .navigationBarBackButtonHidden(true)
         .navigationBarTitle("多人聊天设置", displayMode: .inline)
-        .navigationBarItems(leading: NavigationBackButton().offset(x: -8))
+        .navigationBackButton(color: .black, text: "返回")
     }
 }
 

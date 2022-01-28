@@ -28,9 +28,7 @@ struct AddFriendsView: View {
             }
             Spacer()
         }
-        .navigationBarBackButtonHidden(true)
         .navigationBarTitle("添加朋友", displayMode: .inline)
-        .navigationBarItems(leading: NavigationBackButton().offset(x: -8))
     }
 }
 

@@ -66,9 +66,8 @@ struct ChatSettings: View {
             }
             .padding(.top, 10)
         }
-        .navigationBarBackButtonHidden(true)
         .navigationBarTitle("聊天设置", displayMode: .inline)
-        .navigationBarItems(leading: NavigationBackButton().offset(x: -8))
+        .navigationBackButton(color: .black, text: "返回")
     }
 }
 

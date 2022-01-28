@@ -12,6 +12,13 @@ struct SendBox: View {
     let proxy: GeometryProxy
     @State private var sendText: String = ""
     @State private var sendMore: Bool = false
+    @State var isNameFocused:Bool = false
+    
+    func getFocus(focused:Bool) {
+        if focused {
+            sendMore = false
+        }
+    }
     
     var body: some View {
         VStack(spacing:0){
@@ -21,13 +28,14 @@ struct SendBox: View {
                 VStack {
                     HStack(spacing: 12) {
                         Image("chat_send_voice")
-                        TextEditor(text: $sendText)
+                        TextField("", text: $sendText, onEditingChanged: getFocus)
                             .frame(height: 36)
                             .cornerRadius(4)
                         Button(action: {
                             sendMore.toggle()
+                            hideKeyboard()
                         }, label: {
-                            Image(systemName: "plus.circle")
+                            Image(systemName: sendMore ? "multiply.circle" : "plus.circle")
                                 .foregroundColor(Color.black)
                                 .font(.system(size: 25))
                         })

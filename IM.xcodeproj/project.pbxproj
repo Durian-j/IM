@@ -55,6 +55,7 @@
 		84007A84279467AF005C7494 /* FriendApplicationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84007A83279467AF005C7494 /* FriendApplicationView.swift */; };
 		84060AC92785E84A0088F503 /* ChatSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84060AC82785E84A0088F503 /* ChatSettings.swift */; };
 		840EA6B9279EE948006276B5 /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840EA6B8279EE948006276B5 /* AvatarView.swift */; };
+		845BB5C327A4479400B4B734 /* GlobalExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845BB5C227A4479400B4B734 /* GlobalExtension.swift */; };
 		8470AA6E27A1781D0038CC40 /* SwiftUIX in Frameworks */ = {isa = PBXBuildFile; productRef = 8470AA6D27A1781D0038CC40 /* SwiftUIX */; };
 		84D111B227907B8900CF6FB2 /* Avatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D111B127907B8900CF6FB2 /* Avatar.swift */; };
 		84D6C805278735E400724D49 /* GroupChatSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D6C804278735E400724D49 /* GroupChatSettings.swift */; };
@@ -63,7 +64,6 @@
 		84EF805C2799AFAA00135606 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EF805B2799AFAA00135606 /* ImagePicker.swift */; };
 		84F386D1277DF22E009FB1D4 /* AddFriendsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F386D0277DF22E009FB1D4 /* AddFriendsView.swift */; };
 		84FC6D2027A2D0D50088B6A2 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FC6D1F27A2D0D50088B6A2 /* NetworkManager.swift */; };
-		84FC6D2227A2DF180088B6A2 /* Instaklsjd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FC6D2127A2DF180088B6A2 /* Instaklsjd.swift */; };
 		C6569AB5BBE31AD7D20F0663 /* Pods_IM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DE3BEC223AB4C36A8A6F96A /* Pods_IM.framework */; };
 /* End PBXBuildFile section */
 
@@ -121,13 +121,13 @@
 		84007A83279467AF005C7494 /* FriendApplicationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendApplicationView.swift; sourceTree = "<group>"; };
 		84060AC82785E84A0088F503 /* ChatSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatSettings.swift; sourceTree = "<group>"; };
 		840EA6B8279EE948006276B5 /* AvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
+		845BB5C227A4479400B4B734 /* GlobalExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalExtension.swift; sourceTree = "<group>"; };
 		84D111B127907B8900CF6FB2 /* Avatar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Avatar.swift; sourceTree = "<group>"; };
 		84D6C804278735E400724D49 /* GroupChatSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupChatSettings.swift; sourceTree = "<group>"; };
 		84E9328C27906D4800D7A855 /* CustomToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomToggle.swift; sourceTree = "<group>"; };
 		84EF805B2799AFAA00135606 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		84F386D0277DF22E009FB1D4 /* AddFriendsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendsView.swift; sourceTree = "<group>"; };
 		84FC6D1F27A2D0D50088B6A2 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		84FC6D2127A2DF180088B6A2 /* Instaklsjd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Instaklsjd.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +174,7 @@
 		6A04B24E274CD4C300BE24F9 /* IM */ = {
 			isa = PBXGroup;
 			children = (
+				845BB5C127A4474D00B4B734 /* Extension */,
 				84FC6D1E27A2D0B00088B6A2 /* Http */,
 				84E932902790747B00D7A855 /* Utilities */,
 				84E9328E279072E100D7A855 /* Resources */,
@@ -337,6 +338,14 @@
 			path = Contact;
 			sourceTree = "<group>";
 		};
+		845BB5C127A4474D00B4B734 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				845BB5C227A4479400B4B734 /* GlobalExtension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		84843B822792A71D00588CF2 /* Section */ = {
 			isa = PBXGroup;
 			children = (
@@ -413,7 +422,6 @@
 			isa = PBXGroup;
 			children = (
 				84FC6D1F27A2D0D50088B6A2 /* NetworkManager.swift */,
-				84FC6D2127A2DF180088B6A2 /* Instaklsjd.swift */,
 			);
 			path = Http;
 			sourceTree = "<group>";
@@ -550,7 +558,6 @@
 			files = (
 				6A4214122750C51C00B38559 /* SearchBoxVIew.swift in Sources */,
 				6A113FEB277B06BE00AD929B /* IconFont.swift in Sources */,
-				84FC6D2227A2DF180088B6A2 /* Instaklsjd.swift in Sources */,
 				6A3057B9275A16E500556D95 /* BodyAreaView.swift in Sources */,
 				84E9328D27906D4800D7A855 /* CustomToggle.swift in Sources */,
 				6A42140D2750A85000B38559 /* MessageView.swift in Sources */,
@@ -584,6 +591,7 @@
 				6A4214182750E7CA00B38559 /* SearchFullScreenView.swift in Sources */,
 				6A230876278C55EC000069B6 /* NewFriendsView.swift in Sources */,
 				840EA6B9279EE948006276B5 /* AvatarView.swift in Sources */,
+				845BB5C327A4479400B4B734 /* GlobalExtension.swift in Sources */,
 				6A146FDA2754D34800EDD59F /* ChatView.swift in Sources */,
 				6A78F1AB274F1E9B006380CC /* CountDownButton.swift in Sources */,
 				6A42140F2750AD6D00B38559 /* ContextMenuView.swift in Sources */,

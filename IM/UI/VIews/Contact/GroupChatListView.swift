@@ -34,9 +34,7 @@ struct GroupChatListView: View {
                 MyGroupChatRow(title: "群聊7", avatarList:  ["a1","a2","a3","a4"])
             }
         }
-        .navigationBarBackButtonHidden(true)
         .navigationBarTitle("群聊", displayMode: .inline)
-        .navigationBarItems(leading: NavigationBackButton().offset(x: -8))
     }
 }
 

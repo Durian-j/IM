@@ -15,6 +15,10 @@ let screenHeight = UIScreen.main.bounds.height
 let safeAreaInsets = UIApplication.shared.windows.first?.safeAreaInsets
 
 struct ContentView: View {
+    
+    init(){
+        UINavigationBar.appearance().tintColor = .black
+    }
 
     @State var isAuth: Bool = false
 
