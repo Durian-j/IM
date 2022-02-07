@@ -57,6 +57,8 @@
 		840EA6B9279EE948006276B5 /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840EA6B8279EE948006276B5 /* AvatarView.swift */; };
 		845BB5C327A4479400B4B734 /* GlobalExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845BB5C227A4479400B4B734 /* GlobalExtension.swift */; };
 		8470AA6E27A1781D0038CC40 /* SwiftUIX in Frameworks */ = {isa = PBXBuildFile; productRef = 8470AA6D27A1781D0038CC40 /* SwiftUIX */; };
+		849AC07E27B16DA400F370C4 /* ChatTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849AC07D27B16DA400F370C4 /* ChatTextView.swift */; };
+		849AC08027B16DC200F370C4 /* ChatTextArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849AC07F27B16DC200F370C4 /* ChatTextArea.swift */; };
 		84D111B227907B8900CF6FB2 /* Avatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D111B127907B8900CF6FB2 /* Avatar.swift */; };
 		84D6C805278735E400724D49 /* GroupChatSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D6C804278735E400724D49 /* GroupChatSettings.swift */; };
 		84E9328D27906D4800D7A855 /* CustomToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E9328C27906D4800D7A855 /* CustomToggle.swift */; };
@@ -122,6 +124,8 @@
 		84060AC82785E84A0088F503 /* ChatSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatSettings.swift; sourceTree = "<group>"; };
 		840EA6B8279EE948006276B5 /* AvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
 		845BB5C227A4479400B4B734 /* GlobalExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalExtension.swift; sourceTree = "<group>"; };
+		849AC07D27B16DA400F370C4 /* ChatTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTextView.swift; sourceTree = "<group>"; };
+		849AC07F27B16DC200F370C4 /* ChatTextArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTextArea.swift; sourceTree = "<group>"; };
 		84D111B127907B8900CF6FB2 /* Avatar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Avatar.swift; sourceTree = "<group>"; };
 		84D6C804278735E400724D49 /* GroupChatSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupChatSettings.swift; sourceTree = "<group>"; };
 		84E9328C27906D4800D7A855 /* CustomToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomToggle.swift; sourceTree = "<group>"; };
@@ -379,6 +383,8 @@
 				6A146FD12754B96000EDD59F /* ChatRow.swift */,
 				6A146FD72754C53300EDD59F /* ChatList.swift */,
 				6A7B7CE02755BF5100699C81 /* SendBox.swift */,
+				849AC07D27B16DA400F370C4 /* ChatTextView.swift */,
+				849AC07F27B16DC200F370C4 /* ChatTextArea.swift */,
 			);
 			path = Section;
 			sourceTree = "<group>";
@@ -589,6 +595,7 @@
 				84060AC92785E84A0088F503 /* ChatSettings.swift in Sources */,
 				84007A84279467AF005C7494 /* FriendApplicationView.swift in Sources */,
 				6A4214182750E7CA00B38559 /* SearchFullScreenView.swift in Sources */,
+				849AC07E27B16DA400F370C4 /* ChatTextView.swift in Sources */,
 				6A230876278C55EC000069B6 /* NewFriendsView.swift in Sources */,
 				840EA6B9279EE948006276B5 /* AvatarView.swift in Sources */,
 				845BB5C327A4479400B4B734 /* GlobalExtension.swift in Sources */,
@@ -604,6 +611,7 @@
 				6A6B51E72758A1FE00DF4EE0 /* MeHomeView.swift in Sources */,
 				6AB832C3278819BC00718F38 /* HexColor.swift in Sources */,
 				84D6C805278735E400724D49 /* GroupChatSettings.swift in Sources */,
+				849AC08027B16DC200F370C4 /* ChatTextArea.swift in Sources */,
 				6A4214142750CA1B00B38559 /* MessageRow.swift in Sources */,
 				6A04B250274CD4C300BE24F9 /* IMApp.swift in Sources */,
 				6A230878278C562D000069B6 /* GroupChatListView.swift in Sources */,

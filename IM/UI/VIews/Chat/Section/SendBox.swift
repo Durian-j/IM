@@ -12,7 +12,7 @@ struct SendBox: View {
     let proxy: GeometryProxy
     @State private var sendText: String = ""
     @State private var sendMore: Bool = false
-    @State var isNameFocused:Bool = false
+    @State var height: CGFloat = .zero
     
     func getFocus(focused:Bool) {
         if focused {
@@ -27,10 +27,7 @@ struct SendBox: View {
                 Color("light_gray")
                 VStack {
                     HStack(spacing: 12) {
-                        Image("chat_send_voice")
-                        TextField("", text: $sendText, onEditingChanged: getFocus)
-                            .frame(height: 36)
-                            .cornerRadius(4)
+                        ChatTextArea(text: $sendText, height: $height)
                         Button(action: {
                             sendMore.toggle()
                             hideKeyboard()
@@ -40,7 +37,6 @@ struct SendBox: View {
                                 .font(.system(size: 25))
                         })
                     }
-                    .frame(height: 46)
                     .padding(.trailing, 10)
                     if(sendMore){
                         VStack{
@@ -63,10 +59,10 @@ struct SendBox: View {
                     }
                     Spacer()
                 }
-                .padding(.top, 5)
+                .padding(.top, 10)
                 Spacer()
             }
-            .frame(height: proxy.safeAreaInsets.bottom + (sendMore ? 200: 46))
+            .frame(height: proxy.safeAreaInsets.bottom + (sendMore ? 160.0 + height: height + 20.0))
         }
     }
 }
